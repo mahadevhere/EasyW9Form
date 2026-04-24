@@ -1,0 +1,23 @@
+{
+  "name": "John Smith",
+  "businessName": "",
+  "taxClassification": "Partnership",
+  "llcClassification": "",
+  "otherClassification": "",
+  "exemptPayeeCode": "",
+  "fatcaCode": "",
+  "street": "vj,b,jvj,",
+  "city": "hklh",
+  "state": "HI",
+  "zip": "34565",
+  "requesterName": "",
+  "accountNumbers": "",
+  "taxIdType": "SSN",
+  "taxId": "456-78-9456",
+  "signatureName": "",
+  "signatureImage": null,
+  "signatureType": "draw",
+  "signatureColor": "blue",
+  "signatureFont": "cursive",
+  "formId": "w9_ji5gem6o7"
+}

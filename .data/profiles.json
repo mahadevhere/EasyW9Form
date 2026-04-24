@@ -1,0 +1,181 @@
+[
+  {
+    "email": "imahadevmana@gmail.com",
+    "paidDocs": [
+      {
+        "id": "81eb8584-80eb-4614-9035-8ce96c10af0a",
+        "formData": {
+          "name": "Jhon doe",
+          "businessName": "ADC limited",
+          "taxClassification": "Partnership",
+          "llcClassification": "",
+          "otherClassification": "",
+          "exemptPayeeCode": "",
+          "fatcaCode": "",
+          "street": "jankinks 134",
+          "city": "Dreak",
+          "state": "LA",
+          "zip": "32311",
+          "requesterName": "",
+          "accountNumbers": "",
+          "taxIdType": "SSN",
+          "taxId": "345-67-2345",
+          "signatureName": "",
+          "signatureImage": null,
+          "signatureType": "text",
+          "signatureColor": "blue",
+          "signatureFont": "cursive",
+          "address": "jankinks 134",
+          "cityStateZip": "Dreak, LA 32311"
+        },
+        "date": 1776574143815
+      },
+      {
+        "id": "a67f7f05-5136-4b9e-9310-98a97623d40e",
+        "formData": {
+          "name": "John Smith",
+          "businessName": "Smith Consulting LLC",
+          "taxClassification": "S-Corp",
+          "llcClassification": "",
+          "otherClassification": "",
+          "exemptPayeeCode": "",
+          "fatcaCode": "",
+          "street": "Hilander",
+          "city": "Epec",
+          "state": "ID",
+          "zip": "34343",
+          "requesterName": "",
+          "accountNumbers": "",
+          "taxIdType": "SSN",
+          "taxId": "234-56-7893",
+          "signatureName": "",
+          "signatureImage": null,
+          "signatureType": "text",
+          "signatureColor": "blue",
+          "signatureFont": "cursive"
+        },
+        "date": 1776575389782
+      },
+      {
+        "id": "bcd7aa46-2efb-45d7-8115-a169109ae755",
+        "formData": {
+          "name": "John Smith",
+          "businessName": "ADC limited",
+          "taxClassification": "LLC",
+          "llcClassification": "C",
+          "otherClassification": "",
+          "exemptPayeeCode": "",
+          "fatcaCode": "",
+          "street": "Hhingelco",
+          "city": "Epec",
+          "state": "KY",
+          "zip": "34222",
+          "requesterName": "",
+          "accountNumbers": "",
+          "taxIdType": "SSN",
+          "taxId": "234-56-7843",
+          "signatureName": "",
+          "signatureImage": null,
+          "signatureType": "text",
+          "signatureColor": "black",
+          "signatureFont": "cursive"
+        },
+        "date": 1776577600624
+      },
+      {
+        "id": "955de6c0-0d59-4546-b067-7ecaf11c95e3",
+        "formData": {
+          "name": "Mahadev mana",
+          "businessName": "Smith Consulting LLC",
+          "taxClassification": "Partnership",
+          "llcClassification": "",
+          "otherClassification": "",
+          "exemptPayeeCode": "",
+          "fatcaCode": "",
+          "street": "sent maris",
+          "city": "Gorgea",
+          "state": "AL",
+          "zip": "23232",
+          "requesterName": "",
+          "accountNumbers": "",
+          "taxIdType": "SSN",
+          "taxId": "343-43-4343",
+          "signatureName": "jhon",
+          "signatureImage": null,
+          "signatureType": "text",
+          "signatureColor": "black",
+          "signatureFont": "normal"
+        },
+        "date": 1776586807012
+      }
+    ],
+    "userTag": "User_283A8D",
+    "passwordHash": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f"
+  },
+  {
+    "email": "explorerzeno471@gmail.com",
+    "userTag": "User_9B3F2C",
+    "paidDocs": [
+      {
+        "id": "fc732289-cfb1-45a4-ba41-d92de1c86a65",
+        "formData": {
+          "name": "John Smith",
+          "businessName": "Smith Consulting LLC",
+          "taxClassification": "C-Corp",
+          "llcClassification": "",
+          "otherClassification": "",
+          "exemptPayeeCode": "",
+          "fatcaCode": "",
+          "street": "Acqye",
+          "city": "Eoe",
+          "state": "IA",
+          "zip": "23222",
+          "requesterName": "",
+          "accountNumbers": "",
+          "taxIdType": "SSN",
+          "taxId": "233-45-6789",
+          "signatureName": "",
+          "signatureImage": null,
+          "signatureType": "text",
+          "signatureColor": "blue",
+          "signatureFont": "cursive"
+        },
+        "date": 1776578982651
+      }
+    ],
+    "passwordHash": null
+  },
+  {
+    "email": "imahadevmana@",
+    "userTag": "User_D17E52",
+    "paidDocs": [
+      {
+        "id": "e79ddef3-1867-478f-a977-84dd477d686e",
+        "formData": {
+          "name": "",
+          "businessName": "",
+          "taxClassification": "",
+          "llcClassification": "",
+          "otherClassification": "",
+          "exemptPayeeCode": "",
+          "fatcaCode": "",
+          "street": "",
+          "city": "",
+          "state": "",
+          "zip": "",
+          "requesterName": "",
+          "accountNumbers": "",
+          "taxIdType": "SSN",
+          "taxId": "",
+          "signatureName": "",
+          "signatureImage": null,
+          "signatureType": "draw",
+          "signatureColor": "blue",
+          "signatureFont": "cursive"
+        },
+        "date": 1776588555619
+      }
+    ],
+    "passwordHash": null
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "name": "Sandy Smith",
+  "businessName": "Smith Consulting LLC",
+  "taxClassification": "C-Corp",
+  "llcClassification": "",
+  "otherClassification": "",
+  "exemptPayeeCode": "56t55s",
+  "fatcaCode": "dja6w",
+  "street": "123 boklane",
+  "city": "Mainstreem",
+  "state": "GA",
+  "zip": "34565",
+  "requesterName": "",
+  "accountNumbers": "",
+  "taxIdType": "EIN",
+  "taxId": "34-3434333",
+  "signatureName": "",
+  "signatureImage": null,
+  "signatureType": "text",
+  "signatureColor": "blue",
+  "signatureFont": "cursive",
+  "formId": "w9_ambqlgv8y"
+}
