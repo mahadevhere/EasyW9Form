@@ -56,7 +56,7 @@ export default function Home() {
       <section className="hero" style={{ background: 'radial-gradient(circle at top right, var(--primary-light), transparent), var(--bg-soft)', paddingTop: '100px', paddingBottom: '80px' }}>
         <div className="container hero-grid">
           <div>
-            <div className="hero-badge" style={{ animation: 'pulse-soft 2s infinite' }}>
+            <div className="hero-badge" style={{ animation: 'pulse-soft 2s infinite', background: '#DCFCE7', color: '#166534', border: '1px solid #BBF7D0' }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7s0 6 8 10z"/></svg>
               100% IRS Compliant & Secure
             </div>
@@ -69,8 +69,8 @@ export default function Home() {
                 marginBottom: "24px",
               }}
             >
-              Fill Your W-9 Form Online <br className="hide-mobile" />
-              in 2 Minutes —{" "}
+              Fill Your W-9 Form in <br className="hide-mobile" />
+              2 Minutes —{" "}
               <span style={{ color: "var(--primary)" }}>100% Accurate.</span>
             </h1>
             <p
@@ -83,29 +83,43 @@ export default function Home() {
                 color: "var(--text-secondary)",
               }}
             >
-              No signup required. No confusion. Guided IRS W-9 wizard with real-time PDF preview. Your data is encrypted and{" "}
+              No signup. No confusion. Guided IRS W-9 wizard with real-time PDF preview. Your data is encrypted and{" "}
               <strong>never stored on our servers.</strong>
             </p>
-            <div className="hero-buttons" style={{ marginBottom: '40px' }}>
-              <Link href="/fill-w9-form-online" className="btn btn-primary btn-lg" style={{ boxShadow: '0 10px 20px -5px rgba(37, 99, 235, 0.4)' }}>
-                Start Filling Now — $3.99 →
+            <div className="hero-buttons" style={{ marginBottom: '24px' }}>
+              <Link href="/fill-w9-form-online" className="btn btn-primary btn-lg" style={{ boxShadow: '0 10px 20px -5px rgba(37, 99, 235, 0.4)', padding: '18px 40px' }}>
+                Start Filling Now →
               </Link>
-              <Link href="/fw9.pdf" target="_blank" className="btn btn-outline btn-lg">
+              <Link href="/fw9.pdf" target="_blank" className="btn btn-outline btn-lg" style={{ padding: '18px 32px' }}>
                 View Sample Form
               </Link>
             </div>
+            
+            {/* Trust Proof Row */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', marginBottom: '40px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: 600, color: '#475569' }}>
+                <span style={{ color: '#10B981', fontSize: '18px' }}>✔</span> 256-bit Encrypted
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: 600, color: '#475569' }}>
+                <span style={{ color: '#10B981', fontSize: '18px' }}>✔</span> No Data Stored
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: 600, color: '#475569' }}>
+                <span style={{ color: '#10B981', fontSize: '18px' }}>✔</span> Trusted by 10,000+ Users
+              </div>
+            </div>
+
             <div className="hero-trust" style={{ borderTop: '1px solid var(--border)', paddingTop: '24px', gap: '32px' }}>
               <div className="hero-trust-item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>
-                256-bit Encryption
+                Bank-Grade Security
               </div>
               <div className="hero-trust-item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>
-                Zero-Data Storage
+                Official IRS Form W-9
               </div>
               <div className="hero-trust-item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>
-                5k+ Forms Generated
+                Instant PDF Delivery
               </div>
             </div>
           </div>
@@ -144,18 +158,44 @@ export default function Home() {
           </div>
       </section>
 
+      {/* ===== SECURITY & PRIVACY (TRUST) ===== */}
+      <section className="section" style={{ background: '#f8fafc', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
+        <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+          <div style={{ background: '#EFF6FF', color: '#2563EB', padding: '12px 24px', borderRadius: '100px', fontSize: '14px', fontWeight: 700, marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <span style={{ fontSize: '20px' }}>🔒</span> Your Data is Safe With Us
+          </div>
+          <h2 style={{ fontSize: 'clamp(28px, 3vw, 40px)', fontWeight: 800, marginBottom: '24px', maxWidth: '800px', letterSpacing: '-0.01em' }}>
+            Military-grade security for your <span style={{ color: 'var(--primary)' }}>most sensitive</span> information.
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '32px', width: '100%', marginTop: '40px' }}>
+            {[
+              { icon: '🛡️', title: 'Zero-Storage Policy', desc: 'We do NOT store your SSN, EIN, or address. Once your document is generated, the sensitive data is wiped from memory.' },
+              { icon: '🔐', title: '256-bit Encryption', desc: 'All data is processed in-browser using bank-grade encryption. Your sensitive details never leave your local machine unencrypted.' },
+              { icon: '💳', title: 'Secure Checkout', desc: 'Payments are handled via Razorpay. We never see or store your credit card or banking information.' },
+              { icon: '📄', title: 'Official & Compliant', desc: 'Our templates are the exact official IRS Form W-9. Trusted by CPAs and legal professionals across the US.' }
+            ].map((item, i) => (
+              <div key={i} style={{ background: 'white', padding: '32px', borderRadius: '20px', textAlign: 'left', border: '1px solid var(--border)', boxShadow: 'var(--shadow-sm)' }}>
+                <div style={{ fontSize: '32px', marginBottom: '16px' }}>{item.icon}</div>
+                <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '12px' }}>{item.title}</h3>
+                <p style={{ fontSize: '14px', color: '#64748B', lineHeight: 1.6 }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===== TRUST BAR ===== */}
-      <div style={{ background: 'white', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '24px 0' }}>
+      <div style={{ background: 'white', borderBottom: '1px solid var(--border)', padding: '32px 0' }}>
         <div className="container" style={{ textAlign: 'center' }}>
-          <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '16px' }}>
-            Trusted by freelancers & contractors at
+          <p style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '24px' }}>
+            Used by professionals who work with
           </p>
-          <div className="trust-bar-logos">
-            <span style={{ fontSize: '18px', fontWeight: 800 }}>Upwork</span>
-            <span style={{ fontSize: '18px', fontWeight: 800 }}>Toptal</span>
-            <span style={{ fontSize: '18px', fontWeight: 800 }}>Fiverr</span>
-            <span style={{ fontSize: '18px', fontWeight: 800 }}>Deel</span>
-            <span style={{ fontSize: '18px', fontWeight: 800 }}>Remote.com</span>
+          <div className="trust-bar-logos" style={{ opacity: 0.7 }}>
+            <span style={{ fontSize: '20px', fontWeight: 900, color: '#1E293B' }}>Upwork</span>
+            <span style={{ fontSize: '20px', fontWeight: 900, color: '#1E293B' }}>Toptal</span>
+            <span style={{ fontSize: '20px', fontWeight: 900, color: '#1E293B' }}>Fiverr</span>
+            <span style={{ fontSize: '20px', fontWeight: 900, color: '#1E293B' }}>Deel</span>
+            <span style={{ fontSize: '20px', fontWeight: 900, color: '#1E293B' }}>Remote.com</span>
           </div>
         </div>
       </div>
@@ -308,40 +348,48 @@ export default function Home() {
                   No subscriptions. No hidden fees. Pay once for a perfect document.
                 </p>
               </div>
-              <div className="pricing-card" style={{ margin: 0, width: '100%', boxShadow: 'var(--shadow-xl)', border: '2px solid var(--primary)' }}>
-                <div className="pricing-badge">🔥 Limited-Time Launch Price</div>
+              <div className="pricing-card" style={{ margin: 0, width: '100%', boxShadow: 'var(--shadow-xl)', border: '2px solid var(--primary)', position: 'relative' }}>
+                <div className="pricing-badge" style={{ background: '#EF4444' }}>⚡ Limited-Time Launch Price</div>
                 <div className="pricing-amount">$3<span>.99</span></div>
                 <p className="pricing-desc">
                   <span style={{ textDecoration: 'line-through', color: 'var(--text-muted)', marginRight: '8px' }}>$4.99</span>
-                  Save 20% — offer ends soon!
+                  Save 20% — one-time payment per document.
                 </p>
                 <div className="pricing-features">
-                  <div className="pricing-feature">
-                    <span className="pricing-feature-label">Guided W-9 Wizard</span>
-                    <span className="pricing-feature-value pricing-feature-free">FREE</span>
+                  <div className="pricing-feature" style={{ padding: '14px 0', borderBottom: '1px solid #f1f5f9' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                       <span style={{ fontSize: '15px', fontWeight: 700, color: '#0F172A' }}>Guided W-9 Wizard</span>
+                       <span style={{ fontSize: '12px', color: '#64748B' }}>Step-by-step instructions</span>
+                    </div>
+                    <span style={{ background: '#DCFCE7', color: '#166534', padding: '4px 12px', borderRadius: '100px', fontSize: '12px', fontWeight: 800 }}>FREE</span>
                   </div>
-                  <div className="pricing-feature">
-                    <span className="pricing-feature-label">Real-time PDF Preview</span>
-                    <span className="pricing-feature-value pricing-feature-free">FREE</span>
+                  <div className="pricing-feature" style={{ padding: '14px 0', borderBottom: '1px solid #f1f5f9' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                       <span style={{ fontSize: '15px', fontWeight: 700, color: '#0F172A' }}>Live PDF Preview</span>
+                       <span style={{ fontSize: '12px', color: '#64748B' }}>See it before you pay</span>
+                    </div>
+                    <span style={{ background: '#DCFCE7', color: '#166534', padding: '4px 12px', borderRadius: '100px', fontSize: '12px', fontWeight: 800 }}>FREE</span>
                   </div>
-                  <div className="pricing-feature">
-                    <span className="pricing-feature-label">IRS Compliance Validation</span>
-                    <span className="pricing-feature-value pricing-feature-free">FREE</span>
+                  <div className="pricing-feature" style={{ padding: '14px 0', borderBottom: '1px solid #f1f5f9' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                       <span style={{ fontSize: '15px', fontWeight: 700, color: '#0F172A' }}>IRS Validation</span>
+                       <span style={{ fontSize: '12px', color: '#64748B' }}>Error-free guarantee</span>
+                    </div>
+                    <span style={{ background: '#DCFCE7', color: '#166534', padding: '4px 12px', borderRadius: '100px', fontSize: '12px', fontWeight: 800 }}>FREE</span>
                   </div>
-                  <div className="pricing-feature">
-                    <span className="pricing-feature-label">Smart Document Scanner (OCR)</span>
-                    <span className="pricing-feature-value pricing-feature-free">FREE</span>
-                  </div>
-                  <div className="pricing-feature">
-                    <span className="pricing-feature-label">Download Final W-9 PDF</span>
-                    <span className="pricing-feature-value pricing-feature-paid" style={{ fontSize: '18px' }}>$3.99</span>
+                  <div className="pricing-feature" style={{ padding: '14px 0', borderBottom: '2px solid #E2E8F0', background: '#F8FAFC', margin: '0 -24px', paddingLeft: '24px', paddingRight: '24px' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                       <span style={{ fontSize: '15px', fontWeight: 800, color: 'var(--primary)' }}>Final W-9 Download</span>
+                       <span style={{ fontSize: '12px', color: '#64748B' }}>Official, clean, IRS PDF</span>
+                    </div>
+                    <span style={{ color: 'var(--primary)', fontSize: '18px', fontWeight: 900 }}>$3.99</span>
                   </div>
                 </div>
-                <Link href="/fill-w9-form-online" className="btn btn-primary btn-lg" style={{ width: '100%', background: 'var(--primary)', color: 'white' }}>
-                  Start Filling My W-9 Now →
+                <Link href="/fill-w9-form-online" className="btn btn-primary btn-lg" style={{ width: '100%', background: 'var(--primary)', color: 'white', padding: '20px', borderRadius: '12px', fontSize: '17px', fontWeight: 800 }}>
+                  Fill My W-9 Now →
                 </Link>
-                <p style={{ marginTop: '16px', fontSize: '12px', color: 'var(--text-muted)' }}>
-                  Secure payment via Razorpay · No subscriptions
+                <p style={{ marginTop: '16px', fontSize: '12px', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
+                   <span>🔒</span> Secure Razorpay Checkout · One-time only
                 </p>
               </div>
             </div>
@@ -447,10 +495,48 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== COMING SOON (FUTURE GROWTH) ===== */}
+      <section className="section" style={{ background: '#0F172A', color: 'white' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '48px', alignItems: 'center' }}>
+            <div>
+              <div style={{ color: 'var(--primary-light)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px', fontSize: '13px', marginBottom: '16px' }}>Expansion 2026</div>
+              <h2 style={{ fontSize: 'clamp(28px, 3vw, 42px)', fontWeight: 900, marginBottom: '24px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>More automation <span style={{ color: 'var(--primary-light)' }}>on the way.</span></h2>
+              <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '17px', lineHeight: 1.7, marginBottom: '32px' }}>
+                We&apos;re expanding our &quot;Zero-Storage&quot; automation tools to help you manage your business paperwork without the privacy risks.
+              </p>
+              <div style={{ display: 'grid', gap: '16px' }}>
+                {[
+                  { title: 'I-9 Form Generator', status: 'In Development' },
+                  { title: 'Rental Agreement Builder', status: 'Coming Q3' },
+                  { title: 'UK Self-Assessment Tools', status: 'Planning' }
+                ].map((item, i) => (
+                  <div key={i} style={{ background: 'rgba(255,255,255,0.05)', padding: '16px 20px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span style={{ fontWeight: 600 }}>{item.title}</span>
+                    <span style={{ fontSize: '11px', fontWeight: 800, background: 'rgba(255,255,255,0.1)', padding: '4px 10px', borderRadius: '100px', color: 'var(--primary-light)' }}>{item.status}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div style={{ background: 'rgba(255,255,255,0.03)', padding: '40px', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.1)' }}>
+               <h3 style={{ fontSize: '20px', fontWeight: 800, marginBottom: '12px' }}>Get notified on launch</h3>
+               <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)', marginBottom: '24px' }}>Be the first to know when we release new free tools and official forms.</p>
+               <div style={{ display: 'flex', gap: '10px' }}>
+                 <input type="email" placeholder="Enter your email" style={{ flex: 1, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.2)', padding: '14px 20px', borderRadius: '10px', color: 'white', outline: 'none' }} />
+                 <button className="btn btn-primary" style={{ padding: '0 24px' }}>Join Waitlist</button>
+               </div>
+               <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.3)', marginTop: '16px' }}>
+                 🔒 We value your privacy. No spam, ever.
+               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===== SEO CONTENT ===== */}
       <section className="seo-section" style={{ background: 'white' }}>
         <div className="container-narrow">
-          <h2 style={{ fontSize: '28px', marginBottom: '20px' }}>What is a W-9 Form (Request for Taxpayer Identification Number)?</h2>
+          <h2 style={{ fontSize: '28px', marginBottom: '20px', fontWeight: 800 }}>What is a W-9 Form (Request for Taxpayer Identification Number)?</h2>
           <p>
             A W-9 form (Request for Taxpayer Identification Number and Certification) is an official 
             IRS document used in the United States. When you work as a freelancer, independent contractor, 
@@ -461,7 +547,7 @@ export default function Home() {
             that ensures accuracy and IRS compliance.
           </p>
 
-          <h2 style={{ fontSize: '28px', marginBottom: '20px' }}>How to Fill Out a W-9 Form Online — Step by Step</h2>
+          <h2 style={{ fontSize: '28px', marginBottom: '20px', fontWeight: 800 }}>How to Fill Out a W-9 Form Online — Step by Step</h2>
           <p>
             Filling out a W-9 requires entering your name exactly as it appears on your tax return, 
             selecting the correct federal tax classification (Individual/Sole Proprietor for most freelancers, 
@@ -471,7 +557,7 @@ export default function Home() {
             by walking you through each field with clear instructions and real-time validation.
           </p>
 
-          <h2 style={{ fontSize: '28px', marginBottom: '20px' }}>Common W-9 Mistakes to Avoid</h2>
+          <h2 style={{ fontSize: '28px', marginBottom: '20px', fontWeight: 800 }}>Common W-9 Mistakes to Avoid</h2>
           <p>
             The most frequent error when filling out a W-9 is using a nickname or a DBA name on Line 1 — the IRS requires your 
             legal tax name there. Another common mistake is choosing the wrong entity type (e.g., checking &quot;C Corporation&quot; 
@@ -480,7 +566,7 @@ export default function Home() {
             interpreting IRS rules for you in real-time and flagging errors before you download.
           </p>
 
-          <h2 style={{ fontSize: '28px', marginBottom: '20px' }}>Download Your W-9 PDF Instantly</h2>
+          <h2 style={{ fontSize: '28px', marginBottom: '20px', fontWeight: 800 }}>Download Your W-9 PDF Instantly</h2>
           <p>
             With EasyW9Form, you can generate a completed, IRS-ready W-9 PDF in under two minutes. 
             Your information is processed securely using 256-bit encryption and never stored on our servers. 

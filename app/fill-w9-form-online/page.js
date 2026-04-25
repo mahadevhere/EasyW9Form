@@ -129,6 +129,8 @@ export default function FillW9Form() {
   const [showCheckout, setShowCheckout] = useState(false);
   const [paymentSuccess, setPaymentSuccess] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
+  const [showMobilePreview, setShowMobilePreview] = useState(false);
+  const [isMobilePreviewOpen, setIsMobilePreviewOpen] = useState(false);
 
   const [showRestoreOverlay, setShowRestoreOverlay] = useState(false);
 
@@ -603,6 +605,9 @@ export default function FillW9Form() {
                 />
               ))}
             </div>
+            <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 8, fontSize: 11, fontWeight: 700, color: '#10B981' }}>
+               <span style={{ fontSize: 14 }}>🛡️</span> SECURE & ENCRYPTED
+            </div>
           </div>
 
           <div className="form-panel-body">
@@ -685,7 +690,7 @@ export default function FillW9Form() {
 
                     <div className="field">
                       <label className="field-label" htmlFor="name">
-                        Line 1 — Full Name *
+                        Line 1 — Full Name * <span style={{ fontSize: '10px', color: 'var(--primary)', fontWeight: 800, textTransform: 'uppercase', marginLeft: 8 }}>Legal Name Required</span>
                       </label>
                       <input
                         id="name"
@@ -699,7 +704,7 @@ export default function FillW9Form() {
                       />
                       <div className="field-hint">
                         For sole proprietors, enter the owner&apos;s name on
-                        Line 1
+                        Line 1. <strong>Do not use a nickname.</strong>
                       </div>
                       {errors.name && (
                         <div className="field-error">{errors.name}</div>
@@ -1148,16 +1153,23 @@ export default function FillW9Form() {
                         </button>
                       </div>
                     </div>
-                    <div className="field">
-                      <label className="field-label">
-                        Enter your {formData.taxIdType} *
-                      </label>
+                    <div className="field" style={{ background: '#F8FAFC', padding: '24px', borderRadius: '16px', border: '1px solid var(--border)' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+                        <label className="field-label" style={{ margin: 0 }}>
+                          Enter your {formData.taxIdType} *
+                        </label>
+                        <span style={{ fontSize: '10px', fontWeight: 800, color: '#10B981', display: 'flex', alignItems: 'center', gap: 4 }}>
+                          <span style={{ fontSize: 14 }}>🔒</span> SECURE FIELD
+                        </span>
+                      </div>
                       <input
                         className="field-input"
                         style={{
                           fontSize: 18,
                           letterSpacing: 2,
                           textAlign: "center",
+                          background: 'white',
+                          border: '2px solid var(--primary-light)'
                         }}
                         value={formData.taxId}
                         onChange={handleTaxIdChange}
@@ -1169,9 +1181,9 @@ export default function FillW9Form() {
                       />
                       <div
                         className="field-hint"
-                        style={{ textAlign: "center" }}
+                        style={{ textAlign: "center", marginTop: 12, fontWeight: 600, color: '#475569' }}
                       >
-                        Privacy secured by 256-bit browser encryption.
+                        🛡️ <strong>Zero-Storage:</strong> This information is processed in-browser and is <u>never</u> stored on our servers.
                       </div>
                       {errors.taxId && (
                         <div
@@ -1213,6 +1225,29 @@ export default function FillW9Form() {
                       </div>
                     ) : (
                       <div className="review-section">
+                        {/* Mobile Preview Toggle */}
+                        <div className="show-mobile" style={{ marginBottom: 24 }}>
+                           <button 
+                             className="btn btn-outline" 
+                             style={{ width: '100%', borderStyle: 'dashed', borderColor: 'var(--primary)', color: 'var(--primary)' }}
+                             onClick={() => setShowMobilePreview(!showMobilePreview)}
+                           >
+                              {showMobilePreview ? "Hide Document Preview ↑" : "🔍 Show Document Preview (Mobile) ↓"}
+                           </button>
+                           {showMobilePreview && (
+                              <div style={{ marginTop: 16, border: '1px solid var(--border)', borderRadius: 12, overflow: 'hidden', transform: 'scale(0.95)', transformOrigin: 'top center' }}>
+                                 <W9Preview formData={formData} isPaid={isPaid} />
+                                 <button 
+                                   className="btn btn-sm btn-outline" 
+                                   style={{ width: '100%', borderRadius: 0, border: 'none', borderTop: '1px solid var(--border)' }}
+                                   onClick={() => setShowMobilePreview(false)}
+                                 >
+                                   Close Preview
+                                 </button>
+                              </div>
+                           )}
+                        </div>
+
                         <div className="field">
                           <label className="field-label">How would you like to sign? *</label>
                           <div style={{ display: 'flex', gap: 12, marginBottom: 16 }}>
@@ -1663,6 +1698,76 @@ export default function FillW9Form() {
             </button>
             <p style={{ textAlign: 'center', fontSize: 12, color: 'var(--text-muted)', marginTop: 16 }}>Secure SSL Encrypted Payment via Razorpay</p>
           </div>
+        </div>
+      )}
+
+      {/* MOBILE FLOATING PREVIEW BUTTON */}
+      {!paymentSuccess && (
+        <div className="show-mobile" style={{ position: 'fixed', bottom: 80, right: 20, zIndex: 1000 }}>
+           <button 
+             onClick={() => setIsMobilePreviewOpen(true)}
+             style={{
+               width: 56,
+               height: 56,
+               borderRadius: '50%',
+               background: 'var(--primary)',
+               color: 'white',
+               border: 'none',
+               boxShadow: '0 4px 20px rgba(37,99,235,0.4)',
+               display: 'flex',
+               flexDirection: 'column',
+               alignItems: 'center',
+               justifyContent: 'center',
+               gap: 2
+             }}
+           >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              <span style={{ fontSize: 9, fontWeight: 800 }}>VIEW</span>
+           </button>
+        </div>
+      )}
+
+      {/* MOBILE PREVIEW MODAL */}
+      {isMobilePreviewOpen && (
+        <div 
+          style={{ 
+            position: 'fixed', 
+            inset: 0, 
+            background: 'white', 
+            zIndex: 10000, 
+            display: 'flex', 
+            flexDirection: 'column',
+            animation: 'fadeIn 0.3s ease'
+          }}
+        >
+           <div style={{ padding: '16px 20px', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--bg-soft)' }}>
+              <div>
+                <div style={{ fontSize: 13, fontWeight: 800, color: 'var(--primary)' }}>LIVE FORM PREVIEW</div>
+                <div style={{ fontSize: 10, color: 'var(--text-muted)' }}>Step {step} of 5 — {STEPS[step-1].label}</div>
+              </div>
+              <button 
+                onClick={() => setIsMobilePreviewOpen(false)}
+                className="btn btn-sm btn-outline"
+                style={{ borderRadius: 100, padding: '8px 16px' }}
+              >
+                Close ✕
+              </button>
+           </div>
+           <div style={{ flex: 1, overflowY: 'auto', padding: 16, background: '#525659' }}>
+              <div style={{ transform: 'scale(1)', transformOrigin: 'top center' }}>
+                <W9Preview formData={formData} isPaid={isPaid} />
+              </div>
+              <div style={{ height: 40 }} />
+           </div>
+           <div style={{ padding: 16, borderTop: '1px solid var(--border)', textAlign: 'center' }}>
+              <button 
+                onClick={() => setIsMobilePreviewOpen(false)}
+                className="btn btn-primary"
+                style={{ width: '100%' }}
+              >
+                Back to Editing
+              </button>
+           </div>
         </div>
       )}
     </div>
