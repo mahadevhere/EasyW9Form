@@ -26,6 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@easyw9form',
+    creator: '@easyw9form',
     title: 'Fill W-9 Form Online | Secure & Fast',
     description: 'The fastest, most secure way to fill out your W-9 form online. Guided wizard, live preview, instant PDF download. No data stored.',
     images: ['https://easyw9form.com/og-image.png'],
@@ -36,6 +38,13 @@ export const metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -68,7 +77,43 @@ const webAppSchema = {
     '@type': 'Organization',
     name: 'EasyW9Form',
     url: 'https://easyw9form.com',
+    logo: 'https://easyw9form.com/favicon.ico',
   },
+};
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'EasyW9Form',
+  url: 'https://easyw9form.com',
+  logo: 'https://easyw9form.com/og-image.png',
+  sameAs: [
+    'https://twitter.com/easyw9form',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'support@easyw9form.com',
+    contactType: 'customer support',
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://easyw9form.com',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Fill W-9 Online',
+      item: 'https://easyw9form.com/fill-w9-form-online',
+    },
+  ],
 };
 
 const faqSchema = {
@@ -153,6 +198,14 @@ export default function RootLayout({ children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
         <script
           type="application/ld+json"

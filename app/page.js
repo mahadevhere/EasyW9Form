@@ -119,7 +119,7 @@ export default function Home() {
                animation: 'float 6s ease-in-out infinite',
                overflow: 'hidden'
              }}>
-               {/* Top Bar */}
+               {/* Top Bar (Purely Visual) */}
                <div style={{ background: '#1E293B', padding: '12px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                  <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                    <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#EF4444' }} />
@@ -133,58 +133,12 @@ export default function Home() {
                  </div>
                </div>
 
-               {/* Form Content */}
-               <div style={{ display: 'grid', gridTemplateColumns: '140px 1fr', minHeight: 280 }}>
-                 {/* Step Sidebar */}
-                 <div style={{ background: '#F8FAFC', padding: '20px 16px', borderRight: '1px solid #E2E8F0' }}>
-                   {[
-                     { label: 'Personal', done: true },
-                     { label: 'Tax Class', done: true },
-                     { label: 'Address', done: true },
-                     { label: 'TIN', done: false, active: true },
-                     { label: 'Signature', done: false },
-                   ].map((step, i) => (
-                     <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
-                       <div style={{
-                         width: 22, height: 22, borderRadius: '50%',
-                         background: step.done ? '#10B981' : step.active ? 'var(--primary)' : '#E2E8F0',
-                         color: 'white', fontSize: 10, fontWeight: 800,
-                         display: 'flex', alignItems: 'center', justifyContent: 'center',
-                         transition: 'all 0.3s'
-                       }}>
-                         {step.done ? '✓' : i + 1}
-                       </div>
-                       <span style={{ fontSize: 11, fontWeight: step.active ? 700 : 500, color: step.active ? 'var(--primary)' : '#64748B' }}>{step.label}</span>
-                     </div>
-                   ))}
-                 </div>
-
-                 {/* Form Fields */}
-                 <div style={{ padding: '20px 24px' }}>
-                   <div style={{ fontSize: 14, fontWeight: 800, color: '#0F172A', marginBottom: 4 }}>IRS Form W-9</div>
-                   <div style={{ fontSize: 10, color: '#94A3B8', marginBottom: 16 }}>Request for Taxpayer Identification Number</div>
-
-                   <div style={{ marginBottom: 12 }}>
-                     <div style={{ fontSize: 9, fontWeight: 700, color: '#94A3B8', textTransform: 'uppercase', marginBottom: 4 }}>Full Name</div>
-                     <div style={{ background: '#F1F5F9', padding: '8px 12px', borderRadius: 6, fontSize: 12, fontWeight: 600, color: '#0F172A', border: '1px solid #E2E8F0' }}>Alexander R. Thompson</div>
-                   </div>
-                   <div style={{ marginBottom: 12 }}>
-                     <div style={{ fontSize: 9, fontWeight: 700, color: '#94A3B8', textTransform: 'uppercase', marginBottom: 4 }}>Address</div>
-                     <div style={{ background: '#F1F5F9', padding: '8px 12px', borderRadius: 6, fontSize: 12, fontWeight: 600, color: '#0F172A', border: '1px solid #E2E8F0' }}>123 Innovation Way, Suite 400</div>
-                   </div>
-                   <div style={{ marginBottom: 16 }}>
-                     <div style={{ fontSize: 9, fontWeight: 700, color: '#94A3B8', textTransform: 'uppercase', marginBottom: 4 }}>Taxpayer ID (SSN)</div>
-                     <div style={{ background: '#F1F5F9', padding: '8px 12px', borderRadius: 6, fontSize: 12, fontWeight: 600, color: '#0F172A', border: '1px solid var(--primary)', boxShadow: '0 0 0 3px rgba(37,99,235,0.1)' }}>
-                       •••-••-<span style={{ animation: 'blink 1s step-end infinite' }}>|</span>
-                     </div>
-                   </div>
-
-                   <div style={{ display: 'flex', gap: 8 }}>
-                     <div style={{ flex: 1, background: '#F1F5F9', padding: '8px', borderRadius: 6, textAlign: 'center', fontSize: 10, fontWeight: 600, color: '#64748B', border: '1px solid #E2E8F0', cursor: 'pointer' }}>← Back</div>
-                     <div style={{ flex: 2, background: 'var(--primary)', padding: '8px', borderRadius: 6, textAlign: 'center', fontSize: 10, fontWeight: 700, color: 'white', cursor: 'pointer' }}>Continue →</div>
-                   </div>
-                 </div>
-               </div>
+               {/* Hero Image for SEO and Visuals */}
+               <img 
+                 src="/hero-preview.png" 
+                 alt="EasyW9Form Interface — Secure Online W-9 Form Filler with Live Preview" 
+                 style={{ width: '100%', height: 'auto', display: 'block' }} 
+               />
              </div>
            </div>
           </div>
