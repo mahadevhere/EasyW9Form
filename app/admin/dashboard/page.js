@@ -13,6 +13,7 @@ export default function AdminDashboard() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedDraft, setSelectedDraft] = useState(null);
   const [isSaving, setIsSaving] = useState(false);
+  const [isNotifying, setIsNotifying] = useState(false);
   const [lastUpdated, setLastUpdated] = useState(null);
   const [testData, setTestData] = useState({ name: 'TEST USER', taxId: '000-00-0000', street: '123 ADMIN BLVD', city: 'SYSTEM', state: 'NY', zip: '10001' });
   const router = useRouter();
@@ -52,6 +53,23 @@ export default function AdminDashboard() {
   const handleLogout = async () => {
     await fetch('/api/admin/logout', { method: 'POST' });
     router.push('/admin');
+  };
+
+  const handleNotifySearch = async () => {
+    if (!confirm("Request search engines (Bing/IndexNow) to recrawl your site?")) return;
+    setIsNotifying(true);
+    try {
+      const res = await fetch('/api/admin/notify-search', { method: 'POST' });
+      if (res.ok) {
+        alert("Success: Search engines have been notified via IndexNow. Crawling should begin shortly.");
+      } else {
+        alert("Failed to notify search engines.");
+      }
+    } catch (e) {
+      alert("Error sending notification.");
+    } finally {
+      setIsNotifying(false);
+    }
   };
 
   if (loading) return (
@@ -285,6 +303,21 @@ export default function AdminDashboard() {
                       style={{ background: '#EF4444', color: 'white', border: 'none', padding: '12px 24px', borderRadius: 8, fontWeight: 700, cursor: 'pointer' }}
                     >
                       Clear All Lead Activity (Reset to Zero)
+                    </button>
+                 </div>
+
+                 <div style={{ marginTop: 40, border: '1px solid #E2E8F0', background: '#F8FAFC', padding: 24, borderRadius: 12 }}>
+                    <h4 style={{ color: '#0F172A', fontSize: 16, fontWeight: 700, marginBottom: 8 }}>SEO & Discovery: IndexNow</h4>
+                    <p style={{ fontSize: 14, color: '#64748B', marginBottom: 20 }}>
+                      Force Bing and other search engines to recrawl your site immediately. Use this after making major SEO changes.
+                    </p>
+                    
+                    <button 
+                      onClick={handleNotifySearch}
+                      disabled={isNotifying}
+                      style={{ background: 'var(--primary)', color: 'white', border: 'none', padding: '12px 24px', borderRadius: 8, fontWeight: 700, cursor: isNotifying ? 'not-allowed' : 'pointer', opacity: isNotifying ? 0.7 : 1 }}
+                    >
+                      {isNotifying ? 'Notifying Search Engines...' : 'Notify Search Engines (Request Crawl)'}
                     </button>
                  </div>
               </div>

@@ -10,13 +10,13 @@ export const metadata = {
   openGraph: {
     title: 'Fill W-9 Form Online | Secure IRS PDF | EasyW9Form',
     description: 'Fill and download your W-9 form online in 2 minutes. No signup. Zero data stored. Guided wizard with live PDF preview.',
-    url: 'https://easyw9form.com',
+    url: 'https://www.easyw9form.com',
     type: 'website',
     siteName: 'EasyW9Form',
     locale: 'en_US',
     images: [
       {
-        url: 'https://easyw9form.com/og-image.png',
+        url: 'https://www.easyw9form.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'EasyW9Form — Fill Your W-9 Form Online Securely',
@@ -30,10 +30,10 @@ export const metadata = {
     creator: '@easyw9form',
     title: 'Fill W-9 Form Online | Secure & Fast',
     description: 'The fastest, most secure way to fill out your W-9 form online. Guided wizard, live preview, instant PDF download. No data stored.',
-    images: ['https://easyw9form.com/og-image.png'],
+    images: ['https://www.easyw9form.com/og-image.png'],
   },
   alternates: {
-    canonical: 'https://easyw9form.com',
+    canonical: 'https://www.easyw9form.com',
   },
   robots: {
     index: true,
@@ -46,6 +46,13 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    google: 'your-google-verification-code', // Add your code here
+    // msvalidate.01 is the Bing verification code
+    other: {
+      'msvalidate.01': 'B4AF113BE1B98DFC9A6A3204AFC5F0E9', // Placeholder or add your actual Bing code
+    },
+  },
 };
 
 import LayoutWrapper from '@/components/LayoutWrapper';
@@ -55,7 +62,7 @@ const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: 'EasyW9Form',
-  url: 'https://easyw9form.com',
+  url: 'https://www.easyw9form.com',
   description: 'Fill out your W-9 form online in minutes. Secure, no-signup IRS W-9 wizard with instant PDF download. Zero data storage policy.',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'All',
@@ -76,8 +83,8 @@ const webAppSchema = {
   creator: {
     '@type': 'Organization',
     name: 'EasyW9Form',
-    url: 'https://easyw9form.com',
-    logo: 'https://easyw9form.com/favicon.ico',
+    url: 'https://www.easyw9form.com',
+    logo: 'https://www.easyw9form.com/favicon.ico',
   },
 };
 
@@ -85,8 +92,8 @@ const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'EasyW9Form',
-  url: 'https://easyw9form.com',
-  logo: 'https://easyw9form.com/og-image.png',
+  url: 'https://www.easyw9form.com',
+  logo: 'https://www.easyw9form.com/og-image.png',
   sameAs: [
     'https://twitter.com/easyw9form',
   ],
@@ -105,13 +112,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://easyw9form.com',
+      item: 'https://www.easyw9form.com',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Fill W-9 Online',
-      item: 'https://easyw9form.com/fill-w9-form-online',
+      item: 'https://www.easyw9form.com/fill-w9-form-online',
     },
   ],
 };
