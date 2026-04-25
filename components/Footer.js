@@ -32,7 +32,7 @@ export default function Footer() {
             <Link href="/privacy" className="footer-link">Privacy Policy</Link>
             <Link href="/terms" className="footer-link">Terms of Service</Link>
             <Link href="/refund" className="footer-link">Refund Policy</Link>
-            <Link href="mailto:support@easyw9form.com" className="footer-link">Contact Support</Link>
+            <Link href="mailto:easywform@gmail.com" className="footer-link">Contact Support</Link>
           </div>
         </div>
         <div className="footer-bottom" style={{ flexDirection: 'column', gap: '16px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '32px' }}>
@@ -42,7 +42,7 @@ export default function Footer() {
               <Link href="/privacy" className="footer-link" style={{ padding: 0 }}>Privacy</Link>
               <Link href="/terms" className="footer-link" style={{ padding: 0 }}>Terms</Link>
               <Link href="/refund" className="footer-link" style={{ padding: 0 }}>Refunds</Link>
-              <Link href="mailto:support@easyw9form.com" className="footer-link" style={{ padding: 0 }}>Support</Link>
+              <Link href="mailto:easywform@gmail.com" className="footer-link" style={{ padding: 0 }}>Support</Link>
             </div>
           </div>
           <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)', textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>

@@ -30,7 +30,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Do you offer refunds?',
-    a: 'Due to the instant, digital nature of our service (the PDF is generated and delivered immediately), we do not offer refunds once the document has been downloaded. If you experience a technical issue preventing download, please contact support@easyw9form.com and we will resolve it promptly.'
+    a: 'Due to the instant, digital nature of our service (the PDF is generated and delivered immediately), we do not offer refunds once the document has been downloaded. If you experience a technical issue preventing download, please contact easywform@gmail.com and we will resolve it promptly.'
   },
   {
     q: 'Can I fill out a W-9 on my phone?',
@@ -405,7 +405,7 @@ export default function Home() {
             <div className="section-label">Frequently Asked Questions</div>
             <h2 className="section-title">Everything you need to know about W-9 forms</h2>
             <p className="section-desc">
-              Got questions? We&apos;ve got answers. If you don&apos;t find what you&apos;re looking for, email us at support@easyw9form.com.
+              Got questions? We&apos;ve got answers. If you don&apos;t find what you&apos;re looking for, email us at easywform@gmail.com.
             </p>
           </div>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>

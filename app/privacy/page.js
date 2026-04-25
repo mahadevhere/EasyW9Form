@@ -51,7 +51,7 @@ export default function PrivacyPage() {
       <p>We integrate with the following third-party services, each with their own privacy policies:</p>
       <ul>
         <li><strong>Razorpay</strong> — Payment processing (<a href="https://razorpay.com/privacy/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}>Razorpay Privacy Policy</a>)</li>
-        <li><strong>Brevo</strong> — Transactional email delivery (<a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}>Brevo Privacy Policy</a>)</li>
+        <li><strong>Mailgun</strong> — Transactional email delivery (<a href="https://www.mailgun.com/legal/privacy-policy/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}>Mailgun Privacy Policy</a>)</li>
         <li><strong>MongoDB Atlas</strong> — Database hosting for non-sensitive metadata (email, payment status, IP addresses only)</li>
       </ul>
 
@@ -80,7 +80,7 @@ export default function PrivacyPage() {
         <li>Request deletion of your data from our systems</li>
         <li>Opt out of future transactional emails</li>
       </ul>
-      <p>To exercise any of these rights, contact us at <a href="mailto:support@easyw9form.com" style={{ color: 'var(--primary)' }}>support@easyw9form.com</a>.</p>
+      <p>To exercise any of these rights, contact us at <a href="mailto:easywform@gmail.com" style={{ color: 'var(--primary)' }}>easywform@gmail.com</a>.</p>
 
       <h2>9. Children&apos;s Privacy</h2>
       <p>EasyW9Form is not intended for use by individuals under the age of 18. We do not knowingly collect information from minors.</p>
@@ -91,7 +91,7 @@ export default function PrivacyPage() {
       <h2>11. Contact Us</h2>
       <p>
         For privacy-related questions or concerns, please contact us at:<br />
-        <strong>Email:</strong> <a href="mailto:support@easyw9form.com" style={{ color: 'var(--primary)' }}>support@easyw9form.com</a><br />
+        <strong>Email:</strong> <a href="mailto:easywform@gmail.com" style={{ color: 'var(--primary)' }}>easywform@gmail.com</a><br />
         <strong>Business:</strong> EasyW9Form
       </p>
     </LegalLayout>

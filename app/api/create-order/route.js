@@ -13,10 +13,16 @@ export async function POST(req) {
       key_secret: process.env.RAZORPAY_KEY_SECRET,
     });
 
+    const { formId, email } = await req.json();
+
     const options = {
-      amount: 399, // amount in the smallest currency unit (cents), so 3.99 USD = $3.99? Wait. Razorpay default currency is usually INR. Let's strictly use USD.
+      amount: 399, // $3.99
       currency: "USD",
       receipt: "receipt_order_" + Date.now(),
+      notes: {
+        formId: formId || 'unknown',
+        email: email || 'unknown'
+      }
     };
 
     const order = await instance.orders.create(options);

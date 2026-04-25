@@ -54,7 +54,7 @@ export default function LegalLayout({ children, title, lastUpdated }) {
               <div style={{ marginTop: '32px', paddingTop: '24px', borderTop: '1px solid var(--border)' }}>
                 <p style={{ fontSize: '12px', color: 'var(--text-muted)', lineHeight: 1.6 }}>
                   Questions about our terms? Reach out at <br />
-                  <a href="mailto:support@easyw9form.com" style={{ color: 'var(--primary)', fontWeight: 600 }}>support@easyw9form.com</a>
+                  <a href="mailto:easywform@gmail.com" style={{ color: 'var(--primary)', fontWeight: 600 }}>easywform@gmail.com</a>
                 </p>
               </div>
             </div>

@@ -99,7 +99,7 @@ const orgSchema = {
   ],
   contactPoint: {
     '@type': 'ContactPoint',
-    email: 'support@easyw9form.com',
+    email: 'easywform@gmail.com',
     contactType: 'customer support',
   },
 };
@@ -180,7 +180,7 @@ const faqSchema = {
       name: 'Do you offer refunds?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Due to the instant, digital nature of our service, we do not offer refunds once the document has been downloaded. If you experience a technical issue, contact support@easyw9form.com.',
+        text: 'Due to the instant, digital nature of our service, we do not offer refunds once the document has been downloaded. If you experience a technical issue, contact easywform@gmail.com.',
       },
     },
     {

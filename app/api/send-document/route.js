@@ -1,12 +1,10 @@
 import { NextResponse } from 'next/server';
+import { sendEmail } from '@/lib/mailgun';
 
-const MAILJET_API_KEY = process.env.MAILJET_API_KEY;
-const MAILJET_SECRET_KEY = process.env.MAILJET_SECRET_KEY;
-const BCC_EMAIL = process.env.BCC_EMAIL || 'easywform@gmail.com';
 const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://easyw9form.com';
 
 /**
- * Send professional status emails via Mailjet v3.1 API.
+ * Send professional status emails via Mailgun.
  * No PDF attachments — just status + website link.
  * 
  * type: 'started' | 'success' | 'failed'
@@ -49,7 +47,7 @@ export async function POST(req) {
         },
         ctaText: 'Try Again — Complete Your W-9 →',
         ctaUrl: formUrl,
-        footerNote: 'If you continue to experience issues, please contact us at <a href="mailto:support@easyw9form.com" style="color:#2563eb;">support@easyw9form.com</a>.',
+        footerNote: 'If you continue to experience issues, please contact us at <a href="mailto:easywform@gmail.com" style="color:#2563eb;">easywform@gmail.com</a>.',
       });
     } else {
       // success
@@ -67,35 +65,12 @@ export async function POST(req) {
       });
     }
 
-    // Mailjet v3.1 Send API
-    const mailjetPayload = {
-      Messages: [
-        {
-          From: { Email: 'easywform@gmail.com', Name: 'EasyW9Form' },
-          To: [{ Email: email, Name: name }],
-          // Bcc: [{ Email: BCC_EMAIL, Name: 'EasyW9Form Admin' }], // Enable after domain setup
-          Subject: subject,
-          HTMLPart: bodyHtml,
-        },
-      ],
-    };
-
-    const authHeader = Buffer.from(`${MAILJET_API_KEY}:${MAILJET_SECRET_KEY}`).toString('base64');
-
-    const response = await fetch('https://api.mailjet.com/v3.1/send', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Basic ${authHeader}`,
-      },
-      body: JSON.stringify(mailjetPayload),
+    // Send email via Mailgun
+    await sendEmail({
+      to: email,
+      subject: subject,
+      html: bodyHtml
     });
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('Mailjet Error:', errorText);
-      return NextResponse.json({ error: 'Email delivery failed' }, { status: 500 });
-    }
 
     // Update delivery status in DB — fire-and-forget so email flow isn't blocked by DB issues
     import('@/lib/db').then(({ updateDeliveryStatus }) => {
@@ -167,7 +142,7 @@ function buildEmailTemplate({ greeting, mainText, highlightBox, ctaText, ctaUrl,
         <p style="margin: 0; font-size: 11px; color: #cbd5e1;">
           <a href="${ctaUrl.replace('/fill-w9-form-online', '/privacy')}" style="color: #94a3b8; text-decoration: underline;">Privacy Policy</a> · 
           <a href="${ctaUrl.replace('/fill-w9-form-online', '/terms')}" style="color: #94a3b8; text-decoration: underline;">Terms of Service</a> · 
-          <a href="mailto:support@easyw9form.com" style="color: #94a3b8; text-decoration: underline;">Contact Support</a>
+          <a href="mailto:easywform@gmail.com" style="color: #94a3b8; text-decoration: underline;">Contact Support</a>
         </p>
         <p style="margin: 12px 0 0; font-size: 10px; color: #cbd5e1;">
           EasyW9Form is not affiliated with or endorsed by the IRS or any government agency.

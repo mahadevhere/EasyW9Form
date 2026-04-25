@@ -48,19 +48,19 @@ export default function RefundPage() {
       <h2>4. How to Request a Refund</h2>
       <p>If you believe you qualify for a refund under the exceptions listed above:</p>
       <ol>
-        <li>Email us at <a href="mailto:support@easyw9form.com" style={{ color: 'var(--primary)' }}>support@easyw9form.com</a> within <strong>48 hours</strong> of your purchase</li>
+        <li>Email us at <a href="mailto:easywform@gmail.com" style={{ color: 'var(--primary)' }}>easywform@gmail.com</a> within <strong>48 hours</strong> of your purchase</li>
         <li>Include your <strong>email address</strong> used during checkout and <strong>transaction ID</strong> (from your payment confirmation)</li>
         <li>Describe the issue in detail, including any error messages or screenshots</li>
       </ol>
       <p>We aim to respond to all refund requests within <strong>2 business days</strong>. If approved, refunds will be processed to the original payment method within 5–10 business days, depending on your bank or payment provider.</p>
 
       <h2>5. Chargebacks & Disputes</h2>
-      <p>Filing a chargeback or payment dispute without first contacting us at support@easyw9form.com is a violation of these terms. We reserve the right to contest fraudulent chargebacks and may suspend access to our Service for users who file unwarranted disputes.</p>
+      <p>Filing a chargeback or payment dispute without first contacting us at easywform@gmail.com is a violation of these terms. We reserve the right to contest fraudulent chargebacks and may suspend access to our Service for users who file unwarranted disputes.</p>
 
       <h2>6. Contact Us</h2>
       <p>
         For refund requests or billing questions:<br />
-        <strong>Email:</strong> <a href="mailto:support@easyw9form.com" style={{ color: 'var(--primary)' }}>support@easyw9form.com</a><br />
+        <strong>Email:</strong> <a href="mailto:easywform@gmail.com" style={{ color: 'var(--primary)' }}>easywform@gmail.com</a><br />
         <strong>Response Time:</strong> Within 2 business days
       </p>
     </LegalLayout>

@@ -44,7 +44,7 @@ export default function TermsPage() {
       <p>Due to the instant, digital nature of our Service:</p>
       <ul>
         <li><strong>All sales are final.</strong> Once a clean PDF has been generated and made available for download, no refunds will be issued.</li>
-        <li>If you experience a <strong>technical issue</strong> that prevents you from downloading your document (e.g., server error, PDF corruption), please contact us within 48 hours at <a href="mailto:support@easyw9form.com" style={{ color: 'var(--primary)' }}>support@easyw9form.com</a> and we will either resolve the issue or issue a full refund at our discretion.</li>
+        <li>If you experience a <strong>technical issue</strong> that prevents you from downloading your document (e.g., server error, PDF corruption), please contact us within 48 hours at <a href="mailto:easywform@gmail.com" style={{ color: 'var(--primary)' }}>easywform@gmail.com</a> and we will either resolve the issue or issue a full refund at our discretion.</li>
         <li>Refunds will NOT be provided for: user errors in form data, change of mind after download, duplicate purchases, or dissatisfaction with the content of the form (which is based on your own inputs).</li>
       </ul>
       <p>For full details, see our <Link href="/refund" style={{ color: 'var(--primary)' }}>Refund Policy</Link>.</p>
@@ -91,7 +91,7 @@ export default function TermsPage() {
       <h2>14. Contact Us</h2>
       <p>
         For questions about these Terms of Service, please contact us at:<br />
-        <strong>Email:</strong> <a href="mailto:support@easyw9form.com" style={{ color: 'var(--primary)' }}>support@easyw9form.com</a><br />
+        <strong>Email:</strong> <a href="mailto:easywform@gmail.com" style={{ color: 'var(--primary)' }}>easywform@gmail.com</a><br />
         <strong>Business:</strong> EasyW9Form
       </p>
     </LegalLayout>

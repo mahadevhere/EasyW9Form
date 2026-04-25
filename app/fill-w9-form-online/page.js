@@ -479,6 +479,26 @@ export default function FillW9Form() {
        return;
     }
     setIsProcessing(true);
+
+    // Development Bypass: Direct Download
+    if (process.env.NEXT_PUBLIC_NODE_ENV === 'development') {
+      const proceed = window.confirm("DEV MODE: Do you want to bypass payment and download the official PDF? (This will also send a confirmation email)");
+      
+      if (proceed) {
+        console.log("DEV MODE: Bypassing payment...");
+        setIsPaid(true);
+        setPaymentSuccess(true);
+        setShowCheckout(false);
+        sendStatusEmail('success');
+        await handleDownload();
+        setIsProcessing(false);
+        return;
+      } else {
+        console.log("DEV MODE: Bypass cancelled by user.");
+        setIsProcessing(false);
+        return;
+      }
+    }
     
     // Send 'started' status email (lead capture) in background
     if (!leadEmailSent) {
@@ -486,7 +506,11 @@ export default function FillW9Form() {
       setLeadEmailSent(true);
     }
     try {
-      const res = await fetch("/api/create-order", { method: "POST" });
+      const res = await fetch("/api/create-order", { 
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ formId, email: userEmail })
+      });
       const order = await res.json();
       if (!order.id) {
         alert("Failed to create order.");
