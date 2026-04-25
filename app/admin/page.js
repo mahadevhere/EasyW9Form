@@ -77,7 +77,6 @@ export default function AdminPage() {
               className="field-input"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="admin@easyw9form.com"
               required
               autoFocus
             />

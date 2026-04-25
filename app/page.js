@@ -66,7 +66,6 @@ export default function Home() {
                 lineHeight: 1.1,
                 letterSpacing: "-0.02em",
                 marginBottom: "24px",
-                textAlign: "inherit",
               }}
             >
               Fill Your W-9 Form Online <br className="hide-mobile" />
@@ -86,7 +85,7 @@ export default function Home() {
               No signup required. No confusion. Guided IRS W-9 wizard with real-time PDF preview. Your data is encrypted and{" "}
               <strong>never stored on our servers.</strong>
             </p>
-            <div className="hero-buttons" style={{ justifyContent: 'inherit', marginBottom: '40px' }}>
+            <div className="hero-buttons" style={{ marginBottom: '40px' }}>
               <Link href="/fill-w9-form-online" className="btn btn-primary btn-lg" style={{ boxShadow: '0 10px 20px -5px rgba(37, 99, 235, 0.4)' }}>
                 Start Filling Now — $3.99 →
               </Link>
@@ -94,7 +93,7 @@ export default function Home() {
                 View Sample Form
               </Link>
             </div>
-            <div className="hero-trust" style={{ justifyContent: 'flex-start', borderTop: '1px solid var(--border)', paddingTop: '24px', gap: '32px' }}>
+            <div className="hero-trust" style={{ borderTop: '1px solid var(--border)', paddingTop: '24px', gap: '32px' }}>
               <div className="hero-trust-item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>
                 256-bit Encryption
@@ -196,7 +195,7 @@ export default function Home() {
           <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '16px' }}>
             Trusted by freelancers & contractors at
           </p>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '48px', opacity: 0.5, filter: 'grayscale(1)', alignItems: 'center', flexWrap: 'wrap' }}>
+          <div className="trust-bar-logos">
             <span style={{ fontSize: '18px', fontWeight: 800 }}>Upwork</span>
             <span style={{ fontSize: '18px', fontWeight: 800 }}>Toptal</span>
             <span style={{ fontSize: '18px', fontWeight: 800 }}>Fiverr</span>
@@ -307,7 +306,7 @@ export default function Home() {
                 <div className="section-label">Trust & Excellence</div>
                 <h2 className="section-title">Built for serious freelancers & contractors</h2>
                 <p className="section-desc">
-                  Security isn't a feature, it's our foundation.
+                  Security isn&apos;t a feature, it&apos;s our foundation.
                 </p>
               </div>
               
@@ -479,7 +478,7 @@ export default function Home() {
       </section>
 
       {/* ===== CTA BANNER ===== */}
-      <section style={{ background: 'linear-gradient(135deg, #1e40af, #2563eb)', padding: '80px 0', textAlign: 'center' }}>
+      <section className="cta-section" style={{ background: 'linear-gradient(135deg, #1e40af, #2563eb)', textAlign: 'center' }}>
         <div className="container">
           <h2 style={{ color: 'white', fontSize: 'clamp(24px, 4vw, 42px)', fontWeight: 900, marginBottom: '16px', letterSpacing: '-0.02em' }}>
             Ready to fill your W-9 form?
@@ -487,7 +486,7 @@ export default function Home() {
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '18px', marginBottom: '32px', maxWidth: '500px', margin: '0 auto 32px' }}>
             Join thousands of freelancers who trust EasyW9Form. Takes less than 2 minutes.
           </p>
-          <Link href="/fill-w9-form-online" className="btn btn-lg" style={{ background: 'white', color: 'var(--primary)', fontWeight: 800, padding: '18px 40px', fontSize: '18px', borderRadius: '12px', boxShadow: '0 10px 25px rgba(0,0,0,0.15)' }}>
+          <Link href="/fill-w9-form-online" className="btn btn-lg" style={{ background: 'white', color: 'var(--primary)', fontWeight: 800, borderRadius: '12px', boxShadow: '0 10px 25px rgba(0,0,0,0.15)' }}>
             Fill My W-9 Now — Only $3.99 →
           </Link>
         </div>

@@ -3,6 +3,11 @@ import Razorpay from 'razorpay';
 
 export async function POST(req) {
   try {
+    if (!process.env.RAZORPAY_KEY_ID || !process.env.RAZORPAY_KEY_SECRET) {
+      console.error("CRITICAL: Razorpay keys are not set in environment variables.");
+      return NextResponse.json({ error: "Server configuration error: Payment keys missing." }, { status: 500 });
+    }
+
     const instance = new Razorpay({
       key_id: process.env.RAZORPAY_KEY_ID,
       key_secret: process.env.RAZORPAY_KEY_SECRET,

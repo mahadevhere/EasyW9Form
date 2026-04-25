@@ -7,6 +7,11 @@ export async function POST(req) {
   try {
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature, formData, email } = await req.json();
 
+    if (!process.env.RAZORPAY_KEY_SECRET) {
+      console.error("CRITICAL: RAZORPAY_KEY_SECRET is not set in environment variables.");
+      return NextResponse.json({ error: "Server configuration error: Payment keys missing." }, { status: 500 });
+    }
+
     const hmac = crypto.createHmac('sha256', process.env.RAZORPAY_KEY_SECRET);
     hmac.update(razorpay_order_id + "|" + razorpay_payment_id);
     const generatedSignature = hmac.digest('hex');

@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="footer-grid">
+        <div className="footer-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
           <div>
             <div className="footer-brand">EasyW9Form</div>
             <p className="footer-text">
@@ -19,6 +19,13 @@ export default function Footer() {
             <Link href="/#how-it-works" className="footer-link">How It Works</Link>
             <Link href="/#pricing" className="footer-link">Pricing</Link>
             <Link href="/#faq" className="footer-link">FAQ</Link>
+          </div>
+          <div>
+            <h4>Guides</h4>
+            <Link href="/guides/how-to-fill-w9" className="footer-link">How to Fill W-9</Link>
+            <Link href="/guides/tax-difference-w9-vs-w4" className="footer-link">W-9 vs W-4</Link>
+            <Link href="/guides/w9-for-independent-contractors" className="footer-link">Freelancer's Guide</Link>
+            <Link href="/guides/secure-w9-generation" className="footer-link">Security Guide</Link>
           </div>
           <div>
             <h4>Legal</h4>

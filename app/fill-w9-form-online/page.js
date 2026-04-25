@@ -130,6 +130,8 @@ export default function FillW9Form() {
   const [paymentSuccess, setPaymentSuccess] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
 
+  const [showRestoreOverlay, setShowRestoreOverlay] = useState(false);
+
   const resetForm = useCallback(() => {
     if (typeof window !== 'undefined') {
       sessionStorage.removeItem("w9_draft");
@@ -181,6 +183,9 @@ export default function FillW9Form() {
   };
 
   useEffect(() => {
+    if (sessionStorage.getItem("w9_draft")) {
+      setShowRestoreOverlay(true);
+    }
     initData();
   }, []);
 
@@ -577,17 +582,14 @@ export default function FillW9Form() {
 
   return (
     <div className="form-page">
-      {!isInitialized && (
+      {showRestoreOverlay && !isInitialized && (
         <div style={{ position: 'fixed', inset: 0, background: 'rgba(255,255,255,0.9)', zIndex: 9999, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
           <div style={{ width: 40, height: 40, border: '4px solid #f3f3f3', borderTop: '4px solid var(--primary)', borderRadius: '50%', marginBottom: 16, animation: 'spin 1s linear infinite' }}></div>
           <div style={{ fontWeight: 600, color: 'var(--text-secondary)' }}>Restoring your session...</div>
           <style>{`@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`}</style>
         </div>
       )}
-      <div
-        className="form-layout"
-        style={{ gridTemplateColumns: step === 5 ? "380px 1fr" : "480px 1fr" }}
-      >
+      <div className={`form-layout step-${step}`}>
         <div className="form-panel">
           <div className="form-panel-header">
             <div className="form-progress">
@@ -1637,7 +1639,6 @@ export default function FillW9Form() {
                       }).catch(() => {});
                     }
                   }}
-                  placeholder="name@example.com"
                 />
                 <div className="field-hint">We'll send a confirmation email to this address.</div>
                 {errors.email && <div className="field-error">{errors.email}</div>}
