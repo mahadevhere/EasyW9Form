@@ -10,13 +10,23 @@ export const metadata = {
   openGraph: {
     title: 'Fill W-9 Form Online | Secure IRS PDF | EasyW9Form',
     description: 'Fill and download your W-9 form online in 2 minutes. No signup. Zero data stored. Guided wizard with live PDF preview.',
+    url: 'https://easyw9form.com',
     type: 'website',
     siteName: 'EasyW9Form',
+    images: [
+      {
+        url: 'https://easyw9form.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'EasyW9Form Preview',
+      }
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Fill W-9 Form Online | Secure & Fast',
     description: 'The fastest, most secure way to fill out your W-9 form online. Guided wizard, live preview, instant PDF download. No data stored.',
+    images: ['https://easyw9form.com/og-image.png'],
   },
   alternates: {
     canonical: 'https://easyw9form.com',

@@ -49,8 +49,28 @@ export default function Home() {
     }
   }, []);
   const [openFaq, setOpenFaq] = useState(null);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'EasyW9Form',
+    url: 'https://easyw9form.com',
+    description: 'Fill out your W-9 form online in minutes. Secure, no-signup IRS W-9 wizard with instant PDF download. Zero data storage policy. Trusted by freelancers.',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'All',
+    offers: {
+      '@type': 'Offer',
+      price: '3.99',
+      priceCurrency: 'USD',
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* ===== HERO ===== */}
       <section className="hero" style={{ background: 'radial-gradient(circle at top right, var(--primary-light), transparent), var(--bg-soft)', paddingTop: '100px', paddingBottom: '80px' }}>
         <div className="container hero-grid">
