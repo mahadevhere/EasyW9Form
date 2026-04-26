@@ -56,7 +56,7 @@ export default function Home() {
       <section className="hero" style={{ background: 'radial-gradient(circle at top right, var(--primary-light), transparent), var(--bg-soft)', paddingTop: '100px', paddingBottom: '80px' }}>
         <div className="container hero-grid">
           <div>
-            <div className="hero-badge" style={{ animation: 'pulse-soft 2s infinite', background: '#DCFCE7', color: '#166534', border: '1px solid #BBF7D0' }}>
+            <div className="hero-badge" style={{ animation: 'pulse-soft 2s infinite', background: '#DCFCE7', color: '#14532D', border: '1px solid #BBF7D0' }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7s0 6 8 10z"/></svg>
               100% IRS Compliant & Secure
             </div>
@@ -98,13 +98,13 @@ export default function Home() {
             {/* Trust Proof Row */}
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', marginBottom: '40px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: 600, color: '#475569' }}>
-                <span style={{ color: '#10B981', fontSize: '18px' }}>✔</span> 256-bit Encrypted
+                <span style={{ color: '#059669', fontSize: '18px' }}>✔</span> 256-bit Encrypted
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: 600, color: '#475569' }}>
-                <span style={{ color: '#10B981', fontSize: '18px' }}>✔</span> No Data Stored
+                <span style={{ color: '#059669', fontSize: '18px' }}>✔</span> No Data Stored
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: 600, color: '#475569' }}>
-                <span style={{ color: '#10B981', fontSize: '18px' }}>✔</span> Trusted by 10,000+ Users
+                <span style={{ color: '#059669', fontSize: '18px' }}>✔</span> Trusted by 10,000+ Users
               </div>
             </div>
 
@@ -161,7 +161,7 @@ export default function Home() {
       {/* ===== SECURITY & PRIVACY (TRUST) ===== */}
       <section className="section" style={{ background: '#f8fafc', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
         <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-          <div style={{ background: '#EFF6FF', color: '#2563EB', padding: '12px 24px', borderRadius: '100px', fontSize: '14px', fontWeight: 700, marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <div style={{ background: '#EFF6FF', color: '#1E40AF', padding: '12px 24px', borderRadius: '100px', fontSize: '14px', fontWeight: 700, marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '10px' }}>
             <span style={{ fontSize: '20px' }}>🔒</span> Your Data is Safe With Us
           </div>
           <h2 style={{ fontSize: 'clamp(28px, 3vw, 40px)', fontWeight: 800, marginBottom: '24px', maxWidth: '800px', letterSpacing: '-0.01em' }}>
@@ -349,7 +349,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="pricing-card" style={{ margin: 0, width: '100%', boxShadow: 'var(--shadow-xl)', border: '2px solid var(--primary)', position: 'relative' }}>
-                <div className="pricing-badge" style={{ background: '#EF4444' }}>⚡ Limited-Time Launch Price</div>
+                <div className="pricing-badge" style={{ background: '#EF4444', color: '#FFFFFF' }}>⚡ Limited-Time Launch Price</div>
                 <div className="pricing-amount">$3<span>.99</span></div>
                 <p className="pricing-desc">
                   <span style={{ textDecoration: 'line-through', color: 'var(--text-muted)', marginRight: '8px' }}>$4.99</span>
@@ -361,21 +361,21 @@ export default function Home() {
                        <span style={{ fontSize: '15px', fontWeight: 700, color: '#0F172A' }}>Guided W-9 Wizard</span>
                        <span style={{ fontSize: '12px', color: '#64748B' }}>Step-by-step instructions</span>
                     </div>
-                    <span style={{ background: '#DCFCE7', color: '#166534', padding: '4px 12px', borderRadius: '100px', fontSize: '12px', fontWeight: 800 }}>FREE</span>
+                    <span style={{ background: '#DCFCE7', color: '#14532D', padding: '4px 12px', borderRadius: '100px', fontSize: '12px', fontWeight: 800 }}>FREE</span>
                   </div>
                   <div className="pricing-feature" style={{ padding: '14px 0', borderBottom: '1px solid #f1f5f9' }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                        <span style={{ fontSize: '15px', fontWeight: 700, color: '#0F172A' }}>Live PDF Preview</span>
                        <span style={{ fontSize: '12px', color: '#64748B' }}>See it before you pay</span>
                     </div>
-                    <span style={{ background: '#DCFCE7', color: '#166534', padding: '4px 12px', borderRadius: '100px', fontSize: '12px', fontWeight: 800 }}>FREE</span>
+                    <span style={{ background: '#DCFCE7', color: '#14532D', padding: '4px 12px', borderRadius: '100px', fontSize: '12px', fontWeight: 800 }}>FREE</span>
                   </div>
                   <div className="pricing-feature" style={{ padding: '14px 0', borderBottom: '1px solid #f1f5f9' }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                        <span style={{ fontSize: '15px', fontWeight: 700, color: '#0F172A' }}>IRS Validation</span>
                        <span style={{ fontSize: '12px', color: '#64748B' }}>Error-free guarantee</span>
                     </div>
-                    <span style={{ background: '#DCFCE7', color: '#166534', padding: '4px 12px', borderRadius: '100px', fontSize: '12px', fontWeight: 800 }}>FREE</span>
+                    <span style={{ background: '#DCFCE7', color: '#14532D', padding: '4px 12px', borderRadius: '100px', fontSize: '12px', fontWeight: 800 }}>FREE</span>
                   </div>
                   <div className="pricing-feature" style={{ padding: '14px 0', borderBottom: '2px solid #E2E8F0', background: '#F8FAFC', margin: '0 -24px', paddingLeft: '24px', paddingRight: '24px' }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>

@@ -1351,7 +1351,12 @@ export default function FillW9Form() {
                                     <SignatureCanvas 
                                         ref={sigPadRef}
                                         penColor={formData.signatureColor === 'blue' ? '#1D4ED8' : '#111827'}
-                                        canvasProps={{ width: 320, height: 120, className: 'sigCanvas' }}
+                                        canvasProps={{ 
+                                          width: 320, 
+                                          height: 120, 
+                                          className: 'sigCanvas',
+                                          style: { width: '100%', height: '120px', touchAction: 'none' }
+                                        }}
                                         onEnd={() => {
                                             const img = sigPadRef.current.getTrimmedCanvas().toDataURL('image/png');
                                             setFormData(prev => ({ ...prev, signatureImage: img }));

@@ -14,21 +14,21 @@ export default function Footer() {
             </p>
           </div>
           <div>
-            <h4>Product</h4>
+            <h3>Product</h3>
             <Link href="/fill-w9-form-online" className="footer-link">Fill W-9 Online</Link>
             <Link href="/#how-it-works" className="footer-link">How It Works</Link>
             <Link href="/#pricing" className="footer-link">Pricing</Link>
             <Link href="/#faq" className="footer-link">FAQ</Link>
           </div>
           <div>
-            <h4>Guides</h4>
+            <h3>Guides</h3>
             <Link href="/guides/how-to-fill-w9" className="footer-link">How to Fill W-9</Link>
             <Link href="/guides/tax-difference-w9-vs-w4" className="footer-link">W-9 vs W-4</Link>
             <Link href="/guides/w9-for-independent-contractors" className="footer-link">Freelancer's Guide</Link>
             <Link href="/guides/secure-w9-generation" className="footer-link">Security Guide</Link>
           </div>
           <div>
-            <h4>Legal</h4>
+            <h3>Legal</h3>
             <Link href="/privacy" className="footer-link">Privacy Policy</Link>
             <Link href="/terms" className="footer-link">Terms of Service</Link>
             <Link href="/refund" className="footer-link">Refund Policy</Link>
