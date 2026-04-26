@@ -1346,8 +1346,32 @@ export default function FillW9Form() {
                                     RESET
                                   </button>
                                </div>
-                               <div style={{ padding: 10 }}>
-                                  <div style={{ border: '1px dashed var(--border)', borderRadius: 8 }}>
+                               <div style={{ padding: 10, position: 'relative' }}>
+                                  <div style={{ 
+                                    border: '1px dashed var(--border)', 
+                                    borderRadius: 8, 
+                                    position: 'relative', 
+                                    background: 'linear-gradient(to bottom, #fff 95%, #f1f5f9 100%)',
+                                    overflow: 'hidden'
+                                  }}>
+                                    {/* Sign Here Guide */}
+                                    {!formData.signatureImage && (
+                                      <div style={{ 
+                                        position: 'absolute', 
+                                        top: '50%', 
+                                        left: '50%', 
+                                        transform: 'translate(-50%, -50%)', 
+                                        pointerEvents: 'none',
+                                        opacity: 0.2,
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        gap: 4
+                                      }}>
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                                        <span style={{ fontSize: 10, fontWeight: 800, textTransform: 'uppercase' }}>Sign Here</span>
+                                      </div>
+                                    )}
                                     <SignatureCanvas 
                                         ref={sigPadRef}
                                         penColor={formData.signatureColor === 'blue' ? '#1D4ED8' : '#111827'}
@@ -1360,6 +1384,8 @@ export default function FillW9Form() {
                                         onEnd={() => {
                                             const img = sigPadRef.current.getTrimmedCanvas().toDataURL('image/png');
                                             setFormData(prev => ({ ...prev, signatureImage: img }));
+                                            // Real-time update for preview
+                                            if (step === 5) generateDraftPreviewWithData({ ...formData, signatureImage: img });
                                         }}
                                     />
                                   </div>
@@ -1680,18 +1706,41 @@ export default function FillW9Form() {
         <div
           className="checkout-overlay"
           onClick={() => setShowCheckout(false)}
+          style={{ 
+            animation: 'fadeIn 0.3s ease',
+            backdropFilter: 'blur(4px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '16px'
+          }}
         >
-          <div className="checkout-card" onClick={(e) => e.stopPropagation()}>
-            <div style={{ textAlign: 'center', marginBottom: 20 }}>
-               <h3 style={{ fontSize: 24, fontWeight: 900, marginBottom: 8 }}>Ready to Unlock?</h3>
-               <p style={{ color: 'var(--text-secondary)' }}>Enter your email to receive your official IRS W-9 PDF instantly after payment.</p>
+          <div 
+            className="checkout-card" 
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              animation: 'slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+              maxWidth: '500px',
+              width: '100%',
+              borderRadius: '24px',
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+            }}
+          >
+            <div style={{ textAlign: 'center', marginBottom: 24 }}>
+               <div style={{ width: 60, height: 60, background: 'var(--primary-subtle)', color: 'var(--primary)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px' }}>
+                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+               </div>
+               <h3 style={{ fontSize: 26, fontWeight: 900, marginBottom: 8, letterSpacing: '-0.02em' }}>Finalize Your W-9</h3>
+               <p style={{ color: 'var(--text-secondary)', fontSize: 14 }}>Enter your email to receive your official, high-resolution PDF instantly.</p>
             </div>
 
             <div className="field" style={{ marginBottom: 24 }}>
-                <label className="field-label">Delivery Email Address</label>
+                <label className="field-label" style={{ fontSize: 12, fontWeight: 800 }}>DELIVERY EMAIL ADDRESS</label>
                 <input 
                   type="email" 
                   className="field-input" 
+                  placeholder="name@example.com"
+                  style={{ height: 52, fontSize: 16, borderRadius: 12 }}
                   value={userEmail} 
                   onChange={(e) => setUserEmail(e.target.value)}
                   onBlur={() => {
@@ -1704,28 +1753,38 @@ export default function FillW9Form() {
                     }
                   }}
                 />
-                <div className="field-hint">We'll send a confirmation email to this address.</div>
                 {errors.email && <div className="field-error">{errors.email}</div>}
             </div>
 
-            <div style={{ background: 'var(--bg-soft)', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-                    <span style={{ fontWeight: 600 }}>Professional W-9 Form</span>
-                    <span style={{ fontWeight: 900 }}>$3.99</span>
+            <div style={{ background: '#F8FAFC', borderRadius: 16, padding: '20px 24px', border: '1px solid var(--border)', marginBottom: 28 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
+                    <span style={{ fontWeight: 700, fontSize: 15, color: '#1E293B' }}>Official IRS W-9 PDF</span>
+                    <span style={{ fontWeight: 900, fontSize: 18, color: 'var(--primary)' }}>$3.99</span>
                 </div>
-                <div style={{ fontSize: 12, color: 'var(--text-muted)' }}>One-time payment. Instant browser download. No data stored. <span style={{ textDecoration: 'line-through' }}>$4.99</span> → <strong>$3.99</strong> (limited offer)</div>
+                <div style={{ fontSize: 12, color: '#64748B', lineHeight: 1.5 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 }}>
+                    <span style={{ color: '#10B981' }}>✓</span> Instant Browser Download
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <span style={{ color: '#10B981' }}>✓</span> Encrypted Zero-Data Storage
+                  </div>
+                </div>
             </div>
 
             <button
               className="btn btn-primary btn-lg"
-              style={{ width: "100%", height: 56, fontSize: 18 }}
+              style={{ width: "100%", height: 60, fontSize: 18, borderRadius: 14, fontWeight: 800, boxShadow: '0 10px 20px -5px rgba(37, 99, 235, 0.4)' }}
               onClick={handlePay}
               disabled={isProcessing}
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ marginRight: 10 }}><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-              {isProcessing ? "Processing..." : "Pay & Download Now"}
+              {isProcessing ? "Initialising Secure Link..." : "Unlock Official Document →"}
             </button>
-            <p style={{ textAlign: 'center', fontSize: 12, color: 'var(--text-muted)', marginTop: 16 }}>Secure SSL Encrypted Payment via Razorpay</p>
+            
+            <div style={{ marginTop: 20, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16, opacity: 0.6 }}>
+               <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Razorpay_logo.svg" alt="Razorpay" style={{ height: 14 }} />
+               <div style={{ width: 1, height: 12, background: '#cbd5e1' }} />
+               <span style={{ fontSize: 11, fontWeight: 600 }}>SSL SECURE</span>
+            </div>
           </div>
         </div>
       )}
@@ -2031,8 +2090,28 @@ function W9Preview({ formData, isPaid }) {
         <div className="w9-row-label">
           Part II — Certification · Signature of U.S. person
         </div>
-        <div className="w9-signature-line">
-          {formData.signatureName || formData.name || ""}
+        <div className="w9-signature-line" style={{ position: 'relative', height: 40, verticalAlign: 'bottom' }}>
+          {formData.signatureImage ? (
+             <img 
+               src={formData.signatureImage} 
+               alt="Signature" 
+               style={{ 
+                 position: 'absolute', 
+                 bottom: -5, 
+                 left: 10, 
+                 maxHeight: 50, 
+                 maxWidth: 180,
+                 objectFit: 'contain'
+               }} 
+             />
+          ) : (
+            <span style={{ 
+              fontFamily: formData.signatureFont === 'cursive' ? "'Dancing Script', cursive" : "inherit",
+              color: formData.signatureColor === 'blue' ? "#1D4ED8" : "#111827"
+            }}>
+              {formData.signatureName || formData.name || ""}
+            </span>
+          )}
         </div>
         <div
           style={{
