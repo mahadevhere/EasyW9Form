@@ -90,9 +90,9 @@ export default function Home() {
               <Link href="/fill-w9-form-online" className="btn btn-primary btn-lg" style={{ boxShadow: '0 10px 20px -5px rgba(37, 99, 235, 0.4)', padding: '18px 40px' }}>
                 Start Filling Now →
               </Link>
-              <Link href="/fw9.pdf" target="_blank" className="btn btn-outline btn-lg" style={{ padding: '18px 32px' }}>
+              <a href="/fw9.pdf" target="_blank" className="btn btn-outline btn-lg" style={{ padding: '18px 32px' }}>
                 View Sample Form
-              </Link>
+              </a>
             </div>
             
             {/* Trust Proof Row */}

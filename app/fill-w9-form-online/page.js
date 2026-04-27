@@ -942,7 +942,7 @@ export default function FillW9Form() {
                           Exemptions are generally only for entities like
                           certain corporations or non-profits. Most freelancers
                           should leave these blank.
-                          <Link
+                          <a
                             href="https://www.irs.gov/pub/irs-pdf/fw9.pdf"
                             target="_blank"
                             style={{
@@ -952,7 +952,7 @@ export default function FillW9Form() {
                             }}
                           >
                             See IRS Page 3
-                          </Link>
+                          </a>
                         </div>
                       )}
                       <div
