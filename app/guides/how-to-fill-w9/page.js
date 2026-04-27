@@ -1,7 +1,7 @@
 import GuideLayout from '@/components/GuideLayout';
 
 export const metadata = {
-  title: 'How to Fill Out a W-9 Form (2024 Guide) | EasyW9Form',
+  title: 'How to Fill Out a W-9 Form (2026 Guide) | EasyW9Form',
   description: 'Learn exactly how to fill out IRS Form W-9 correctly. Our step-by-step guide covers entity types, TIN, and common mistakes for freelancers and LLCs.',
 };
 
@@ -10,7 +10,7 @@ export default function GuidePage() {
     <GuideLayout 
       title="How to Fill Out a W-9 Form: A Step-by-Step Guide"
       subtitle="The Request for Taxpayer Identification Number and Certification (Form W-9) is the most common form for contractors. Here is how to get it right."
-      lastUpdated="April 2024"
+      lastUpdated="April 2026"
     >
       <p>
         If you are an independent contractor, freelancer, or run a small business, you will inevitably be asked to fill out a W-9 form. Companies use this form to collect your tax information so they can report the payments they make to you to the IRS.

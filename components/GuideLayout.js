@@ -11,6 +11,9 @@ export default function GuideLayout({ children, title, subtitle, lastUpdated }) 
     { href: '/guides/tax-difference-w9-vs-w4', label: 'W-9 vs. W-4' },
     { href: '/guides/w9-for-independent-contractors', label: 'Freelancer Guide' },
     { href: '/guides/secure-w9-generation', label: 'Security & Privacy' },
+    { href: '/blog/w9-form-for-llc', label: 'W-9 for LLCs' },
+    { href: '/blog/when-do-you-need-a-w9', label: 'When Do You Need a W-9?' },
+    { href: '/blog/w9-form-for-rental-property', label: 'W-9 for Rental Property' },
   ];
 
   return (

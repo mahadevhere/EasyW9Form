@@ -10,7 +10,7 @@ export default function GuidePage() {
     <GuideLayout 
       title="W-9 vs W-4: What is the Difference?"
       subtitle="Knowing which form to use is critical for staying tax-compliant. Here is the breakdown of W-9 vs W-4."
-      lastUpdated="April 2024"
+      lastUpdated="April 2026"
     >
       <p>
         If you&apos;ve just started a new gig or a job, you might be handed a piece of paper that starts with &quot;W.&quot; Whether it&apos;s a W-9 or a W-4 determines your relationship with the company and how your taxes will be handled.

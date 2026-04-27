@@ -10,7 +10,7 @@ export default function GuidePage() {
     <GuideLayout 
       title="The Freelancer's Guide to Form W-9"
       subtitle="Everything independent contractors need to know about providing their tax information safely and accurately."
-      lastUpdated="April 2024"
+      lastUpdated="April 2026"
     >
       <p>
         As a freelancer, your &quot;onboarding&quot; with a new client almost always starts with a W-9 request. While it looks like a simple form, handling it correctly is vital for your business and security.

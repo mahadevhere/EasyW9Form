@@ -10,7 +10,7 @@ export default function GuidePage() {
     <GuideLayout 
       title="Is it Safe to Fill out a W-9 Form Online?"
       subtitle="Your Taxpayer Identification Number is sensitive. Here is how to ensure your data stays private when using online tools."
-      lastUpdated="April 2024"
+      lastUpdated="April 2026"
     >
       <p>
         In an era of frequent data breaches, being hesitant to enter your Social Security Number (SSN) into a website is a sign of good digital hygiene. However, filling out forms online can be safer than traditional methods — if you use the right tool.

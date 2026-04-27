@@ -50,10 +50,9 @@ export const metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code', // Add your code here
-    // msvalidate.01 is the Bing verification code
+    // google: 'ADD-YOUR-GOOGLE-VERIFICATION-CODE-HERE',
     other: {
-      'msvalidate.01': 'B4AF113BE1B98DFC9A6A3204AFC5F0E9', // Placeholder or add your actual Bing code
+      'msvalidate.01': 'B4AF113BE1B98DFC9A6A3204AFC5F0E9',
     },
   },
 };
@@ -75,13 +74,6 @@ const webAppSchema = {
     price: '3.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
-  },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.9',
-    ratingCount: '2000',
-    bestRating: '5',
-    worstRating: '1',
   },
   creator: {
     '@type': 'Organization',

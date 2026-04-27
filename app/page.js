@@ -1,7 +1,6 @@
-'use client';
-
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import FAQAccordion from '@/components/FAQAccordion';
+import VersionCheck from '@/components/VersionCheck';
 
 const FAQ_ITEMS = [
   {
@@ -39,19 +38,10 @@ const FAQ_ITEMS = [
 ];
 
 export default function Home() {
-  // Version check – clear stale session data if app version changed
-  const APP_VERSION = '1.2.0';
-  useEffect(() => {
-    const storedVersion = sessionStorage.getItem('app_version');
-    if (storedVersion !== APP_VERSION) {
-      sessionStorage.clear();
-      sessionStorage.setItem('app_version', APP_VERSION);
-    }
-  }, []);
-  const [openFaq, setOpenFaq] = useState(null);
 
   return (
     <>
+      <VersionCheck />
       {/* ===== HERO ===== */}
       <section className="hero" style={{ background: 'radial-gradient(circle at top right, var(--primary-light), transparent), var(--bg-soft)', paddingTop: '100px', paddingBottom: '80px' }}>
         <div className="container hero-grid">
@@ -408,75 +398,7 @@ export default function Home() {
               Got questions? We&apos;ve got answers. If you don&apos;t find what you&apos;re looking for, email us at easywform@gmail.com.
             </p>
           </div>
-          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            {FAQ_ITEMS.map((item, idx) => (
-              <div
-                key={idx}
-                style={{
-                  border: '1px solid var(--border)',
-                  borderRadius: '12px',
-                  marginBottom: '12px',
-                  overflow: 'hidden',
-                  background: openFaq === idx ? 'white' : '#fafbfc',
-                  boxShadow: openFaq === idx ? 'var(--shadow-sm)' : 'none',
-                  transition: 'all 0.2s ease',
-                }}
-              >
-                <button
-                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                  style={{
-                    width: '100%',
-                    padding: '20px 24px',
-                    border: 'none',
-                    background: 'transparent',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    gap: '16px',
-                    fontSize: '15px',
-                    fontWeight: 600,
-                    color: 'var(--text)',
-                    textAlign: 'left',
-                    lineHeight: 1.4,
-                  }}
-                >
-                  <span>{item.q}</span>
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    style={{
-                      flexShrink: 0,
-                      transform: openFaq === idx ? 'rotate(180deg)' : 'rotate(0)',
-                      transition: 'transform 0.2s ease',
-                      color: 'var(--text-muted)',
-                    }}
-                  >
-                    <polyline points="6 9 12 15 18 9" />
-                  </svg>
-                </button>
-                {openFaq === idx && (
-                  <div
-                    style={{
-                      padding: '0 24px 20px',
-                      fontSize: '14px',
-                      color: 'var(--text-secondary)',
-                      lineHeight: 1.7,
-                      animation: 'slideDown 0.3s ease',
-                    }}
-                  >
-                    {item.a}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+          <FAQAccordion items={FAQ_ITEMS} />
         </div>
       </section>
 
