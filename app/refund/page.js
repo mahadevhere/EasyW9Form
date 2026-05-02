@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Refund Policy — EasyW9Form',
   description: 'Learn about EasyW9Form\'s refund policy. All sales are final for digital PDF downloads.',
+  alternates: { canonical: '/refund' },
 };
 
 export default function RefundPage() {

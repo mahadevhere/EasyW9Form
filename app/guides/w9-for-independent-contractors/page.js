@@ -3,6 +3,7 @@ import GuideLayout from '@/components/GuideLayout';
 export const metadata = {
   title: 'W-9 for Independent Contractors & Freelancers | EasyW9Form',
   description: 'A comprehensive guide for freelancers and independent contractors on how to handle W-9 requests, SSN vs EIN, and 1099 compliance.',
+  alternates: { canonical: '/guides/w9-for-independent-contractors' },
 };
 
 export default function GuidePage() {

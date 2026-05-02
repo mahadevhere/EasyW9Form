@@ -3,6 +3,7 @@ import LegalLayout from '@/components/LegalLayout';
 export const metadata = {
   title: 'Privacy Policy — EasyW9Form',
   description: 'Learn about EasyW9Form\'s zero-data-storage privacy policy. Your SSN and EIN are never stored on our servers.',
+  alternates: { canonical: '/privacy' },
 };
 
 export default function PrivacyPage() {

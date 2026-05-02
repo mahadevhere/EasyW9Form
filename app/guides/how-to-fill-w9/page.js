@@ -3,6 +3,7 @@ import GuideLayout from '@/components/GuideLayout';
 export const metadata = {
   title: 'How to Fill Out a W-9 Form (2026 Guide) | EasyW9Form',
   description: 'Learn exactly how to fill out IRS Form W-9 correctly. Our step-by-step guide covers entity types, TIN, and common mistakes for freelancers and LLCs.',
+  alternates: { canonical: '/guides/how-to-fill-w9' },
 };
 
 export default function GuidePage() {

@@ -2,6 +2,12 @@ import Link from 'next/link';
 import FAQAccordion from '@/components/FAQAccordion';
 import VersionCheck from '@/components/VersionCheck';
 
+export const metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
+
 const FAQ_ITEMS = [
   {
     q: 'What is a W-9 form and who needs to fill one out?',
@@ -43,7 +49,10 @@ export default function Home() {
     <>
       <VersionCheck />
       {/* ===== HERO ===== */}
-      <section className="hero" style={{ background: 'radial-gradient(circle at top right, var(--primary-light), transparent), var(--bg-soft)', paddingTop: '100px', paddingBottom: '80px' }}>
+      <section className="hero bg-dot-pattern" style={{ background: 'linear-gradient(135deg, rgba(238, 242, 255, 0.95) 0%, rgba(219, 234, 254, 0.95) 30%, rgba(240, 253, 250, 0.95) 70%, rgba(248, 250, 252, 0.95) 100%)', paddingTop: '120px', paddingBottom: '100px', position: 'relative', overflow: 'hidden' }}>
+        {/* Decorative blobs */}
+        <div className="hero-blob" style={{ width: '500px', height: '500px', background: 'rgba(37, 99, 235, 0.12)', top: '-200px', right: '-100px' }} />
+        <div className="hero-blob" style={{ width: '300px', height: '300px', background: 'rgba(139, 92, 246, 0.1)', bottom: '-100px', left: '-50px' }} />
         <div className="container hero-grid">
           <div>
             <div className="hero-badge" style={{ animation: 'pulse-soft 2s infinite', background: '#DCFCE7', color: '#14532D', border: '1px solid #BBF7D0' }}>
@@ -61,7 +70,7 @@ export default function Home() {
             >
               Fill Your W-9 Form in <br className="hide-mobile" />
               2 Minutes —{" "}
-              <span style={{ color: "var(--primary)" }}>100% Accurate.</span>
+              <span className="gradient-text">100% Accurate.</span>
             </h1>
             <p
               className="hero-subtitle"
@@ -77,11 +86,11 @@ export default function Home() {
               <strong>never stored on our servers.</strong>
             </p>
             <div className="hero-buttons" style={{ marginBottom: '24px' }}>
-              <Link href="/fill-w9-form-online" className="btn btn-primary btn-lg" style={{ boxShadow: '0 10px 20px -5px rgba(37, 99, 235, 0.4)', padding: '18px 40px' }}>
+              <Link href="/fill-w9-form-online" className="btn btn-primary btn-lg" style={{ padding: '18px 40px', fontSize: '17px', borderRadius: '14px' }}>
                 Start Filling Now →
               </Link>
-              <a href="/fw9.pdf" target="_blank" className="btn btn-outline btn-lg" style={{ padding: '18px 32px' }}>
-                View Sample Form
+              <a href="#how-it-works" className="btn btn-outline btn-lg" style={{ padding: '18px 32px' }}>
+                See How It Works
               </a>
             </div>
             
@@ -155,7 +164,7 @@ export default function Home() {
             <span style={{ fontSize: '20px' }}>🔒</span> Your Data is Safe With Us
           </div>
           <h2 style={{ fontSize: 'clamp(28px, 3vw, 40px)', fontWeight: 800, marginBottom: '24px', maxWidth: '800px', letterSpacing: '-0.01em' }}>
-            Military-grade security for your <span style={{ color: 'var(--primary)' }}>most sensitive</span> information.
+            Military-grade security for your <span className="gradient-text">most sensitive</span> information.
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '32px', width: '100%', marginTop: '40px' }}>
             {[
@@ -164,7 +173,7 @@ export default function Home() {
               { icon: '💳', title: 'Secure Checkout', desc: 'Payments are handled via Razorpay. We never see or store your credit card or banking information.' },
               { icon: '📄', title: 'Official & Compliant', desc: 'Our templates are the exact official IRS Form W-9. Trusted by CPAs and legal professionals across the US.' }
             ].map((item, i) => (
-              <div key={i} style={{ background: 'white', padding: '32px', borderRadius: '20px', textAlign: 'left', border: '1px solid var(--border)', boxShadow: 'var(--shadow-sm)' }}>
+              <div key={i} className="security-card" style={{ textAlign: 'left' }}>
                 <div style={{ fontSize: '32px', marginBottom: '16px' }}>{item.icon}</div>
                 <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '12px' }}>{item.title}</h3>
                 <p style={{ fontSize: '14px', color: '#64748B', lineHeight: 1.6 }}>{item.desc}</p>
@@ -191,8 +200,8 @@ export default function Home() {
       </div>
 
       {/* ===== HOW IT WORKS ===== */}
-      <section className="section section-light" id="how-it-works">
-        <div className="container">
+      <section className="section section-light bg-grid-pattern" id="how-it-works" style={{ position: 'relative' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div className="section-header">
             <div className="section-label">How It Works</div>
             <h2 className="section-title">Fill out your W-9 form in three simple steps</h2>
@@ -201,17 +210,17 @@ export default function Home() {
             </p>
           </div>
           <div className="steps-grid">
-            <div className="step-card">
+            <div className="step-card glass-panel">
               <div className="step-number">1</div>
               <h3>Scan or Enter Details</h3>
               <p>Upload a photo of your ID or old W-9 and our Gemini AI scanner extracts your data instantly. Or, use our guided wizard to type it in manually.</p>
             </div>
-            <div className="step-card">
+            <div className="step-card glass-panel">
               <div className="step-number">2</div>
               <h3>Live PDF Preview</h3>
               <p>Watch your official W-9 form generate in real-time as you complete each step. See exactly how it looks before you download.</p>
             </div>
-            <div className="step-card">
+            <div className="step-card glass-panel" style={{ border: '2px solid var(--primary-light)' }}>
               <div className="step-number">3</div>
               <h3>Sign & Download</h3>
               <p>Sign digitally (Type, Draw, or Upload), pay once ($3.99), and get your clean, IRS-ready PDF delivered instantly to your email.</p>
@@ -295,17 +304,21 @@ export default function Home() {
                 </p>
               </div>
               
-              <div style={{ marginBottom: '32px', background: 'white', padding: '24px', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border)', boxShadow: 'var(--shadow-sm)' }}>
-                <div style={{ display: 'flex', gap: '4px', marginBottom: '12px' }}>
-                  {[1,2,3,4,5].map(i => <span key={i} style={{ color: '#F59E0B' }}>★</span>)}
-                  <span style={{ fontSize: '14px', fontWeight: 600, marginLeft: '8px' }}>4.9/5 from 2,000+ users</span>
+              <div className="glass-panel" style={{ marginBottom: '32px', padding: '32px', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-md)', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ position: 'absolute', top: '-10px', right: '-10px', fontSize: '100px', color: 'rgba(37, 99, 235, 0.05)', lineHeight: 1 }}>"</div>
+                <div style={{ display: 'flex', gap: '4px', marginBottom: '16px' }}>
+                  {[1,2,3,4,5].map(i => <span key={i} style={{ color: '#F59E0B', fontSize: '18px' }}>★</span>)}
+                  <span style={{ fontSize: '15px', fontWeight: 700, marginLeft: '8px', color: '#1E293B' }}>4.9/5 from 2,000+ users</span>
                 </div>
-                <p style={{ fontStyle: 'italic', color: 'var(--text-secondary)', fontSize: '14px', marginBottom: '16px' }}>
-                  &quot;I was terrified of making a mistake on my EIN for a new client. EasyW9 guided me through the classification questions and I had a perfect PDF in literally 60 seconds.&quot;
+                <p style={{ fontStyle: 'italic', color: '#334155', fontSize: '16px', lineHeight: 1.6, marginBottom: '20px', position: 'relative', zIndex: 1 }}>
+                  "I was terrified of making a mistake on my EIN for a new client. EasyW9 guided me through the classification questions and I had a perfect PDF in literally 60 seconds."
                 </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div style={{ width: 32, height: 32, borderRadius: '50%', background: 'var(--primary-light)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '12px' }}>JD</div>
-                  <span style={{ fontSize: '13px', fontWeight: 600 }}>Jason D., Senior Contractor</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                  <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'linear-gradient(135deg, var(--primary-light), #E0E7FF)', color: 'var(--primary-dark)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '14px', border: '2px solid white', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>JD</div>
+                  <div>
+                    <div style={{ fontSize: '15px', fontWeight: 700, color: '#0F172A' }}>Jason D.</div>
+                    <div style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>Senior Contractor</div>
+                  </div>
                 </div>
               </div>
 
@@ -338,8 +351,8 @@ export default function Home() {
                   No subscriptions. No hidden fees. Pay once for a perfect document.
                 </p>
               </div>
-              <div className="pricing-card" style={{ margin: 0, width: '100%', boxShadow: 'var(--shadow-xl)', border: '2px solid var(--primary)', position: 'relative' }}>
-                <div className="pricing-badge" style={{ background: '#EF4444', color: '#FFFFFF' }}>⚡ Limited-Time Launch Price</div>
+              <div className="pricing-card" style={{ margin: 0, width: '100%', boxShadow: '0 25px 50px -12px rgba(37, 99, 235, 0.25)', border: '2px solid var(--primary)', position: 'relative', background: 'linear-gradient(to bottom, #ffffff, #F8FAFC)' }}>
+                <div className="pricing-badge" style={{ background: 'linear-gradient(135deg, #EF4444 0%, #B91C1C 100%)', color: '#FFFFFF', boxShadow: '0 4px 10px rgba(239, 68, 68, 0.3)' }}>⚡ Limited-Time Launch Price</div>
                 <div className="pricing-amount">$3<span>.99</span></div>
                 <p className="pricing-desc">
                   <span style={{ textDecoration: 'line-through', color: 'var(--text-muted)', marginRight: '8px' }}>$4.99</span>
@@ -403,15 +416,17 @@ export default function Home() {
       </section>
 
       {/* ===== CTA BANNER ===== */}
-      <section className="cta-section" style={{ background: 'linear-gradient(135deg, #1e40af, #2563eb)', textAlign: 'center' }}>
-        <div className="container">
-          <h2 style={{ color: 'white', fontSize: 'clamp(24px, 4vw, 42px)', fontWeight: 900, marginBottom: '16px', letterSpacing: '-0.02em' }}>
+      <section className="cta-section" style={{ background: 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+        <div className="hero-blob" style={{ background: 'rgba(255, 255, 255, 0.2)', width: 400, height: 400, top: -100, left: -100 }} />
+        <div className="hero-blob" style={{ background: 'rgba(255, 255, 255, 0.15)', width: 300, height: 300, bottom: -50, right: -50 }} />
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <h2 style={{ color: 'white', fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 900, marginBottom: '20px', letterSpacing: '-0.02em', textShadow: '0 2px 10px rgba(0,0,0,0.1)' }}>
             Ready to fill your W-9 form?
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '18px', marginBottom: '32px', maxWidth: '500px', margin: '0 auto 32px' }}>
+          <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '20px', marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px' }}>
             Join thousands of freelancers who trust EasyW9Form. Takes less than 2 minutes.
           </p>
-          <Link href="/fill-w9-form-online" className="btn btn-lg" style={{ background: 'white', color: 'var(--primary)', fontWeight: 800, borderRadius: '12px', boxShadow: '0 10px 25px rgba(0,0,0,0.15)' }}>
+          <Link href="/fill-w9-form-online" className="btn btn-lg cta-btn" style={{ background: 'white', color: 'var(--primary-dark)', fontWeight: 800, borderRadius: '100px', padding: '20px 48px', fontSize: '18px', boxShadow: '0 20px 40px rgba(0,0,0,0.2)', transition: 'all 0.3s ease' }}>
             Fill My W-9 Now — Only $3.99 →
           </Link>
         </div>

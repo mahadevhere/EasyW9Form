@@ -7,12 +7,15 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
 export const metadata = {
-  title: 'Fill W-9 Form Online | Secure IRS-Ready PDF — EasyW9Form',
-  description: 'Fill out your W-9 form online in minutes. Secure, no-signup IRS W-9 wizard with instant PDF download. Zero data storage policy. Trusted by freelancers.',
-  keywords: 'w9, w9 form, fill w9, fill w9 online, fillable w9, w 9 form, w9 tax form, fillable w 9 form, online w9 filler, fill out w9 online, free w9 form, downloadable w9, editable w9, w9 form fillable, w9 form fill out, how to fill out a w9, blank w9 form, irs w 9 form, w9 form free, w9 pdf filler, online w9 form, printable w9, fill out w9 form, w9 for business, w9 for llc, how to fill out w9 form, w9 independent contractor, electronic w9, digital w9, creating a w9, w9 form online fill, w9 form filler',
+  title: {
+    default: 'Free W-9 Form Generator | Fill Online & Instant PDF Download',
+    template: '%s | EasyW9Form',
+  },
+  description: 'Fill out your IRS W-9 form online instantly. Secure, fillable W-9 form generator with guided wizard and instant PDF download. Zero data storage policy.',
+  keywords: 'w9 form generator, w9 form online, online w 9 form, w9 tax form online, instant w9 pdf, fillable w-9 form, electronic w9 form, digital w9 form, free w9 generator',
   openGraph: {
-    title: 'Fill W-9 Form Online | Secure IRS PDF | EasyW9Form',
-    description: 'Fill and download your W-9 form online in 2 minutes. No signup. Zero data stored. Guided wizard with live PDF preview.',
+    title: 'W-9 Form Generator | Fill Online & Instant PDF Download',
+    description: 'The most secure online W-9 form generator. Guided wizard, live preview, and instant IRS-ready PDF. No signup required.',
     url: 'https://www.easyw9form.com',
     type: 'website',
     siteName: 'EasyW9Form',
@@ -35,9 +38,7 @@ export const metadata = {
     description: 'The fastest, most secure way to fill out your W-9 form online. Guided wizard, live preview, instant PDF download. No data stored.',
     images: ['https://www.easyw9form.com/og-image.png'],
   },
-  alternates: {
-    canonical: 'https://www.easyw9form.com',
-  },
+  metadataBase: new URL('https://www.easyw9form.com'),
   robots: {
     index: true,
     follow: true,
@@ -191,7 +192,7 @@ const faqSchema = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={inter.className} data-scroll-behavior="smooth">
       <head>
         {/* Schema.org structured data — rendered server-side for crawler visibility */}
         <script

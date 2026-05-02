@@ -3,6 +3,7 @@ import GuideLayout from '@/components/GuideLayout';
 export const metadata = {
   title: 'Is it Safe to Fill a W-9 Form Online? | EasyW9Form',
   description: 'Security guide for online tax forms. Learn how EasyW9Form protects your SSN/EIN with zero-data storage and 256-bit encryption.',
+  alternates: { canonical: '/guides/secure-w9-generation' },
 };
 
 export default function GuidePage() {

@@ -3,6 +3,7 @@ import GuideLayout from '@/components/GuideLayout';
 export const metadata = {
   title: 'W-9 vs W-4: Key Differences for Tax Filers | EasyW9Form',
   description: 'Confused between Form W-9 and Form W-4? Learn the differences, who needs which form, and how they impact your taxes and withholding.',
+  alternates: { canonical: '/guides/tax-difference-w9-vs-w4' },
 };
 
 export default function GuidePage() {

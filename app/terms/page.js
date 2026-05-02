@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Terms of Service — EasyW9Form',
   description: 'Read the terms of service for EasyW9Form, the secure online W-9 form generator.',
+  alternates: { canonical: '/terms' },
 };
 
 export default function TermsPage() {
