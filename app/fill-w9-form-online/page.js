@@ -1781,7 +1781,7 @@ export default function FillW9Form() {
             </button>
             
             <div style={{ marginTop: 20, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16, opacity: 0.6 }}>
-               <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Razorpay_logo.svg" alt="Razorpay" style={{ height: 14 }} />
+               <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Razorpay_logo.svg" alt="Razorpay" style={{ height: 14 }} />
                <div style={{ width: 1, height: 12, background: '#cbd5e1' }} />
                <span style={{ fontSize: 11, fontWeight: 600 }}>SSL SECURE</span>
             </div>
