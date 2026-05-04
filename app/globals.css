@@ -2524,51 +2524,230 @@ ul { list-style: none; }
   box-shadow: 0 25px 50px rgba(0,0,0,0.3) !important;
 }
 
-/* Mobile responsive improvements */
+/* ===== MOBILE RESPONSIVE — TABLET ===== */
+@media (max-width: 991px) {
+  .split-section-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ===== MOBILE RESPONSIVE — PHONE ===== */
 @media (max-width: 768px) {
+  /* — Global section spacing — */
+  .section {
+    padding: 40px 0;
+  }
+  .container {
+    padding: 0 16px;
+  }
+  .container-narrow {
+    padding: 0 16px;
+  }
+  .section-header {
+    margin-bottom: 28px;
+  }
+  .section-title {
+    font-size: 22px;
+    letter-spacing: -0.3px;
+  }
+  .section-desc {
+    font-size: 14px;
+  }
+  .section-label {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  /* — Hero — */
+  .hero {
+    padding-top: 32px !important;
+    padding-bottom: 40px !important;
+  }
+  .hero h1 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  .hero-subtitle {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+  .hero-badge {
+    font-size: 11px;
+    padding: 5px 12px;
+    margin-bottom: 16px;
+  }
+  .hero-trust {
+    margin-top: 28px;
+    gap: 12px;
+  }
+  .hero-trust-item {
+    font-size: 11px;
+  }
+  .hero-blob {
+    display: none;
+  }
+
+  /* — Steps grid — */
   .steps-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
   }
   .steps-grid::before {
     display: none;
   }
   .step-card {
-    padding: 24px 20px;
+    padding: 20px 16px;
   }
+  .step-card h3 {
+    font-size: 16px;
+  }
+  .step-card p {
+    font-size: 13px;
+  }
+  .step-number {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  /* — Security / Trust cards (4-col → 2-col) — */
+  .security-card {
+    padding: 20px 16px;
+  }
+  .security-card h3 {
+    font-size: 15px !important;
+    margin-bottom: 8px !important;
+  }
+  .security-card p {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* — Feature cards ("Why Us") — */
+  .glass-panel {
+    padding: 20px 16px !important;
+  }
+  .glass-panel h3 {
+    font-size: 17px !important;
+    margin-bottom: 8px !important;
+  }
+  .glass-panel p {
+    font-size: 13px !important;
+  }
+
+  /* — Pricing — */
+  .pricing-card {
+    padding: 24px 16px;
+  }
+  .pricing-amount {
+    font-size: 48px;
+  }
+  .pricing-desc {
+    font-size: 13px;
+  }
+
+  /* — Split grid (Social Proof + Pricing) — */
+  .split-section-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* — CTA Section — */
+  .cta-section {
+    padding: 40px 16px;
+  }
+  .cta-section h2 {
+    font-size: 24px !important;
+  }
+  .cta-section p {
+    font-size: 15px !important;
+    margin-bottom: 24px !important;
+  }
+  .cta-btn {
+    padding: 16px 32px !important;
+    font-size: 15px !important;
+  }
+
+  /* — SEO Content Section — */
+  .seo-section {
+    padding: 40px 0;
+  }
+  .seo-section h2 {
+    font-size: 20px !important;
+    margin-bottom: 12px !important;
+  }
+  .seo-section p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* — Tools grid — */
   .tools-grid {
     grid-template-columns: 1fr;
   }
-  .split-section-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
+
+  /* — Footer — */
   .footer-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    gap: 24px;
   }
   .footer-bottom {
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
     text-align: center;
   }
-  .section {
-    padding: 56px 0;
+
+  /* — Benefit items — */
+  .benefit-item {
+    padding: 10px 12px;
+    font-size: 13px;
   }
-  .section-title {
-    font-size: 26px;
+  .benefit-icon {
+    font-size: 16px;
   }
-  .hero h1 {
-    font-size: 32px;
+
+  /* — FAQ — */
+  .faq-question {
+    padding: 16px;
+    font-size: 14px;
   }
-  .pricing-card {
-    padding: 28px 20px;
+  .faq-answer {
+    padding: 0 16px 16px;
+    font-size: 13px;
   }
 }
 
+/* ===== MOBILE RESPONSIVE — SMALL PHONE ===== */
 @media (max-width: 480px) {
+  .hero h1 {
+    font-size: 24px;
+  }
+  .hero-subtitle {
+    font-size: 14px;
+  }
+  .section {
+    padding: 32px 0;
+  }
+  .section-title {
+    font-size: 20px;
+  }
+  .container {
+    padding: 0 14px;
+  }
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+  .pricing-card {
+    padding: 20px 14px;
+  }
+  .cta-section h2 {
+    font-size: 22px !important;
+  }
+  .cta-btn {
+    padding: 14px 24px !important;
+    font-size: 14px !important;
+    width: 100%;
   }
 }
 

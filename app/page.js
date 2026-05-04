@@ -160,7 +160,7 @@ export default function Home() {
           <h2 style={{ fontSize: 'clamp(28px, 3vw, 40px)', fontWeight: 800, marginBottom: '24px', maxWidth: '800px', letterSpacing: '-0.01em' }}>
             Military-grade security for your <span className="gradient-text">most sensitive</span> information.
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '32px', width: '100%', marginTop: '40px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '16px', width: '100%', marginTop: '28px' }}>
             {[
               { icon: '🛡️', title: 'Zero-Storage Policy', desc: 'We do NOT store your SSN, EIN, or address. Once your document is generated, the sensitive data is wiped from memory.' },
               { icon: '🔐', title: '256-bit Encryption', desc: 'All data is processed in-browser using bank-grade encryption. Your sensitive details never leave your local machine unencrypted.' },
@@ -168,9 +168,9 @@ export default function Home() {
               { icon: '📄', title: 'Official & Compliant', desc: 'Our templates are the exact official IRS Form W-9. Trusted by CPAs and legal professionals across the US.' }
             ].map((item, i) => (
               <div key={i} className="security-card" style={{ textAlign: 'left' }}>
-                <div style={{ fontSize: '32px', marginBottom: '16px' }}>{item.icon}</div>
-                <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '12px' }}>{item.title}</h3>
-                <p style={{ fontSize: '14px', color: '#64748B', lineHeight: 1.6 }}>{item.desc}</p>
+                <div style={{ fontSize: '28px', marginBottom: '12px' }}>{item.icon}</div>
+                <h3 style={{ fontSize: '16px', fontWeight: 700, marginBottom: '8px' }}>{item.title}</h3>
+                <p style={{ fontSize: '13px', color: '#64748B', lineHeight: 1.5 }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -221,23 +221,23 @@ export default function Home() {
             </p>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px', marginTop: '40px' }}>
-            <div className="glass-panel" style={{ padding: '32px', borderRadius: 'var(--radius-xl)', border: '1px solid var(--border)', background: '#F8FAFC' }}>
-              <div style={{ fontSize: '40px', marginBottom: '20px' }}>🔒</div>
-              <h3 style={{ fontSize: '22px', fontWeight: 800, marginBottom: '16px' }}>Privacy-First</h3>
-              <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>We never store your SSN or EIN. It's encrypted in your browser and deleted the moment you download.</p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', marginTop: '28px' }}>
+            <div className="glass-panel" style={{ padding: '24px', borderRadius: 'var(--radius-xl)', border: '1px solid var(--border)', background: '#F8FAFC' }}>
+              <div style={{ fontSize: '28px', marginBottom: '12px' }}>🔒</div>
+              <h3 style={{ fontSize: '18px', fontWeight: 800, marginBottom: '10px' }}>Privacy-First</h3>
+              <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>We never store your SSN or EIN. It's encrypted in your browser and deleted the moment you download.</p>
             </div>
             
-            <div className="glass-panel" style={{ padding: '32px', borderRadius: 'var(--radius-xl)', border: '1px solid var(--border)', background: '#F8FAFC' }}>
-              <div style={{ fontSize: '40px', marginBottom: '20px' }}>✅</div>
-              <h3 style={{ fontSize: '22px', fontWeight: 800, marginBottom: '16px' }}>Zero Errors</h3>
-              <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>Our AI verifies your inputs against IRS rules. No 'Return to sender' requests from accounting teams.</p>
+            <div className="glass-panel" style={{ padding: '24px', borderRadius: 'var(--radius-xl)', border: '1px solid var(--border)', background: '#F8FAFC' }}>
+              <div style={{ fontSize: '28px', marginBottom: '12px' }}>✅</div>
+              <h3 style={{ fontSize: '18px', fontWeight: 800, marginBottom: '10px' }}>Zero Errors</h3>
+              <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>Our AI verifies your inputs against IRS rules. No 'Return to sender' requests from accounting teams.</p>
             </div>
             
-            <div className="glass-panel" style={{ padding: '32px', borderRadius: 'var(--radius-xl)', border: '1px solid var(--border)', background: '#F8FAFC' }}>
-              <div style={{ fontSize: '40px', marginBottom: '20px' }}>📄</div>
-              <h3 style={{ fontSize: '22px', fontWeight: 800, marginBottom: '16px' }}>Client-Ready</h3>
-              <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>Professional, clean, and 100% accepted by major platforms like Upwork, Deel, and Rippling.</p>
+            <div className="glass-panel" style={{ padding: '24px', borderRadius: 'var(--radius-xl)', border: '1px solid var(--border)', background: '#F8FAFC' }}>
+              <div style={{ fontSize: '28px', marginBottom: '12px' }}>📄</div>
+              <h3 style={{ fontSize: '18px', fontWeight: 800, marginBottom: '10px' }}>Client-Ready</h3>
+              <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>Professional, clean, and 100% accepted by major platforms like Upwork, Deel, and Rippling.</p>
             </div>
           </div>
         </div>
@@ -389,7 +389,7 @@ export default function Home() {
       {/* ===== COMING SOON (FUTURE GROWTH) ===== */}
       <section className="section" style={{ background: '#0F172A', color: 'white' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '48px', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '32px', alignItems: 'center' }}>
             <div>
               <div style={{ color: 'var(--primary-light)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px', fontSize: '13px', marginBottom: '16px' }}>Expansion 2026</div>
               <h2 style={{ fontSize: 'clamp(28px, 3vw, 42px)', fontWeight: 900, marginBottom: '24px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>More automation <span style={{ color: 'var(--primary-light)' }}>on the way.</span></h2>
@@ -424,47 +424,70 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== SEO CONTENT ===== */}
-      <section className="seo-section" style={{ background: 'white' }}>
-        <div className="container-narrow">
-          <h2 style={{ fontSize: '28px', marginBottom: '20px', fontWeight: 800 }}>What is a W-9 Form (Request for Taxpayer Identification Number)?</h2>
-          <p>
-            A W-9 form (Request for Taxpayer Identification Number and Certification) is an official 
-            IRS document used in the United States. When you work as a freelancer, independent contractor, 
-            or vendor, your clients need your W-9 to report payments they make to you on a 1099 form. The W-9 collects 
-            your legal name, business name, federal tax classification, address, and Taxpayer Identification Number 
-            (TIN) — either your Social Security Number (SSN) or Employer Identification Number (EIN).
-            EasyW9Form makes it fast and easy to fill out your W-9 form online, with a guided wizard 
-            that ensures accuracy and IRS compliance.
-          </p>
+      {/* ===== SEO CONTENT & W-9 GUIDE ===== */}
+      <section className="section seo-section" style={{ background: '#f8fafc', borderTop: '1px solid var(--border)' }}>
+        <div className="container">
+          <div className="section-header">
+            <div className="section-label">Knowledge Base</div>
+            <h2 className="section-title">W-9 Form Resources & Information</h2>
+            <p className="section-desc">
+              Everything you need to know about the IRS Request for Taxpayer Identification Number and Certification.
+            </p>
+          </div>
 
-          <h2 style={{ fontSize: '28px', marginBottom: '20px', fontWeight: 800 }}>How to Fill Out a W-9 Form Online — Step by Step</h2>
-          <p>
-            Filling out a W-9 requires entering your name exactly as it appears on your tax return, 
-            selecting the correct federal tax classification (Individual/Sole Proprietor for most freelancers, 
-            or LLC/Corporation for businesses), providing your current mailing address, and entering 
-            your SSN or EIN. Common mistakes include using nicknames instead of legal names, selecting 
-            the wrong entity type, or entering an incorrect TIN. Our guided W-9 form filler eliminates these errors 
-            by walking you through each field with clear instructions and real-time validation.
-          </p>
+          <div className="split-section-grid" style={{ gap: '32px' }}>
+            {/* Card 1 */}
+            <div className="glass-panel" style={{ padding: '32px', borderRadius: 'var(--radius-xl)', background: 'white', border: '1px solid var(--border)', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: '#EFF6FF', color: '#3B82F6', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px' }}>
+                  📄
+                </div>
+                <h3 style={{ fontSize: '18px', fontWeight: 800, color: '#0F172A', margin: 0 }}>What is a W-9 Form?</h3>
+              </div>
+              <p style={{ fontSize: '15px', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                A W-9 form is an official IRS document used in the US. When you work as an independent contractor or freelancer, clients need your W-9 to report payments to you on a 1099 form. It collects your legal name, business classification, and TIN (SSN or EIN).
+              </p>
+            </div>
 
-          <h2 style={{ fontSize: '28px', marginBottom: '20px', fontWeight: 800 }}>Common W-9 Mistakes to Avoid</h2>
-          <p>
-            The most frequent error when filling out a W-9 is using a nickname or a DBA name on Line 1 — the IRS requires your 
-            legal tax name there. Another common mistake is choosing the wrong entity type (e.g., checking &quot;C Corporation&quot; 
-            when you are actually a Single Member LLC). Incorrect TIN formatting (e.g., mixing up SSN and EIN formats) 
-            can also cause issues during tax season. Our fillable W-9 form generator prevents these pitfalls by 
-            interpreting IRS rules for you in real-time and flagging errors before you download.
-          </p>
+            {/* Card 2 */}
+            <div className="glass-panel" style={{ padding: '32px', borderRadius: 'var(--radius-xl)', background: 'white', border: '1px solid var(--border)', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: '#F0FDF4', color: '#22C55E', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px' }}>
+                  💻
+                </div>
+                <h3 style={{ fontSize: '18px', fontWeight: 800, color: '#0F172A', margin: 0 }}>How to Fill It Out Online</h3>
+              </div>
+              <p style={{ fontSize: '15px', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                Filling out a W-9 requires your name exactly as it appears on your tax return, the correct federal tax classification, and your TIN. Our guided W-9 form filler eliminates formatting errors by walking you through each field with real-time validation.
+              </p>
+            </div>
 
-          <h2 style={{ fontSize: '28px', marginBottom: '20px', fontWeight: 800 }}>Download Your W-9 PDF Instantly</h2>
-          <p>
-            With EasyW9Form, you can generate a completed, IRS-ready W-9 PDF in under two minutes. 
-            Your information is processed securely using 256-bit encryption and never stored on our servers. 
-            Once you complete the form and make your one-time $3.99 payment, you receive an instant download 
-            of your professionally filled W-9 that&apos;s ready to submit to any client, employer, or financial institution.
-            No signup required. No subscriptions. Just a fast, secure, fillable W-9 form online.
-          </p>
+            {/* Card 3 */}
+            <div className="glass-panel" style={{ padding: '32px', borderRadius: 'var(--radius-xl)', background: 'white', border: '1px solid var(--border)', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: '#FEF2F2', color: '#EF4444', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px' }}>
+                  ⚠️
+                </div>
+                <h3 style={{ fontSize: '18px', fontWeight: 800, color: '#0F172A', margin: 0 }}>Common Mistakes to Avoid</h3>
+              </div>
+              <p style={{ fontSize: '15px', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                The most frequent error is using a nickname or DBA on Line 1 instead of your legal tax name. Incorrect entity types (like checking "C Corp" for a single-member LLC) or TIN formats can cause issues. Our tool automatically flags these errors.
+              </p>
+            </div>
+
+            {/* Card 4 */}
+            <div className="glass-panel" style={{ padding: '32px', borderRadius: 'var(--radius-xl)', background: 'white', border: '1px solid var(--border)', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: '#FAF5FF', color: '#A855F7', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px' }}>
+                  ⚡
+                </div>
+                <h3 style={{ fontSize: '18px', fontWeight: 800, color: '#0F172A', margin: 0 }}>Download Instantly</h3>
+              </div>
+              <p style={{ fontSize: '15px', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                Generate a completed, IRS-ready W-9 PDF in under two minutes. Your information is processed securely using 256-bit encryption and never stored on our servers. Download a professionally filled W-9 ready to submit to any client.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </>

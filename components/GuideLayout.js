@@ -17,9 +17,9 @@ export default function GuideLayout({ children, title, subtitle, lastUpdated, he
   ];
 
   return (
-    <div className="section" style={{ background: '#F8FAFC', minHeight: '100vh', paddingTop: '100px', paddingBottom: '80px' }}>
+    <div className="section guide-layout-wrapper" style={{ background: '#F8FAFC', minHeight: '100vh', paddingTop: '100px', paddingBottom: '80px' }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: '240px 1fr', gap: '48px', alignItems: 'start' }}>
+        <div className="guide-layout-grid">
           
           {/* Sidebar */}
           <aside className="hide-mobile" style={{ position: 'sticky', top: '100px' }}>
@@ -104,6 +104,26 @@ export default function GuideLayout({ children, title, subtitle, lastUpdated, he
           box-shadow: 0 1px 3px rgba(0,0,0,0.04);
           border: 1px solid #E2E8F0;
           overflow: hidden;
+        }
+
+        /* ── Layout Grid ── */
+        .guide-layout-grid {
+          display: grid;
+          grid-template-columns: 240px 1fr;
+          gap: 48px;
+          align-items: start;
+        }
+        @media (max-width: 991px) {
+          .guide-layout-grid {
+            grid-template-columns: 1fr;
+            gap: 0;
+          }
+        }
+        @media (max-width: 768px) {
+          .guide-layout-wrapper {
+            padding-top: 72px !important;
+            padding-bottom: 40px !important;
+          }
         }
 
         /* ── Header Banner ── */
@@ -493,14 +513,47 @@ export default function GuideLayout({ children, title, subtitle, lastUpdated, he
           margin-bottom: 20px !important;
         }
 
-        /* ── Responsive ── */
+        /* ── Responsive — Tablet ── */
+        @media (max-width: 991px) {
+          .guide-article {
+            border-radius: 16px;
+          }
+        }
+
+        /* ── Responsive — Phone ── */
         @media (max-width: 768px) {
-          .guide-header { padding: 24px 20px 20px; }
-          .guide-content { padding: 24px 20px; }
-          .guide-cta-footer { margin: 0 20px 20px; padding: 24px; }
-          .guide-step-card { flex-direction: column; gap: 16px; padding: 20px; }
-          .guide-mistakes-grid { grid-template-columns: 1fr; }
+          .guide-header { padding: 20px 16px 16px; }
+          .guide-badge { font-size: 10px; padding: 4px 10px; margin-bottom: 12px; }
+          .guide-title { font-size: 22px; }
+          .guide-subtitle { font-size: 13px; }
+          .guide-content { padding: 20px 16px; }
+          .guide-content h2 {
+            font-size: 18px;
+            margin: 28px 0 8px;
+            padding-top: 20px;
+          }
+          .guide-content h3 { font-size: 15px; margin: 20px 0 6px; }
+          .guide-content p { font-size: 14px; margin-bottom: 12px; }
+          .guide-content li { font-size: 14px; margin-bottom: 8px; }
+          .guide-content th { font-size: 11px; padding: 8px 10px; }
+          .guide-content td { font-size: 13px; padding: 8px 10px; }
+          .guide-content .alert { padding: 12px 14px; font-size: 13px; margin: 16px 0 24px; }
+          .guide-cta-footer { margin: 0 16px 16px; padding: 20px; }
+          .guide-cta-footer h3 { font-size: 17px; }
+          .guide-cta-footer p { font-size: 13px !important; }
+          .guide-step-card { flex-direction: column; gap: 12px; padding: 16px; margin-bottom: 16px; }
           .guide-step-number { width: 32px; height: 32px; font-size: 14px; border-radius: 10px; }
+          .guide-step-title { font-size: 16px; }
+          .guide-step-body p { font-size: 13px !important; }
+          .guide-mistakes-section { margin-top: 28px; padding-top: 20px; }
+          .guide-mistakes-title { font-size: 16px; }
+          .guide-mistakes-grid { grid-template-columns: 1fr; gap: 8px; }
+          .guide-mistake-card { padding: 14px; }
+          .guide-mistake-emoji { font-size: 20px; margin-bottom: 4px; }
+          .guide-mistake-card h4 { font-size: 13px; }
+          .guide-mistake-card p { font-size: 12px !important; }
+          .guide-tin-rule { padding: 10px 12px; font-size: 13px; }
+          .guide-checklist-item { font-size: 13px; }
         }
       `}</style>
     </div>
