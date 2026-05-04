@@ -302,14 +302,24 @@ export default function FillW9Form() {
     if (validateStep()) {
       const nextStep = Math.min(step + 1, 5);
       setStep(nextStep);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.querySelector('.form-panel')?.scrollTo({ top: 0, behavior: 'smooth' });
       if (nextStep === 5) {
         generateDraftPreview();
       }
     }
   };
-  const handlePrev = () => setStep((s) => Math.max(s - 1, 1));
+  const handlePrev = () => {
+    setStep((s) => Math.max(s - 1, 1));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.querySelector('.form-panel')?.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   const handleGoToStep = (t) => {
-    if (t < step) setStep(t);
+    if (t < step) {
+      setStep(t);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.querySelector('.form-panel')?.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const handleSignatureUpload = (e) => {
@@ -654,27 +664,44 @@ export default function FillW9Form() {
               </div>
 
 
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 24 }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
                 <div className="form-step-label" style={{ margin: 0 }}>
                   Step {step} of 5 · {STEPS[step - 1].label}
                 </div>
-                <button 
-                  onClick={resetForm}
-                  className="btn btn-outline btn-sm"
-                  style={{ 
-                    color: 'var(--danger)', 
-                    borderColor: 'rgba(239, 68, 68, 0.2)', 
-                    background: 'rgba(239, 68, 68, 0.05)',
-                    padding: '6px 12px',
-                    fontSize: '11px',
-                    fontWeight: 700,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px'
-                  }}
-                >
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{ marginRight: 4 }}><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-                  Clear & Start Fresh
-                </button>
+                <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+                  <button 
+                    onClick={resetForm}
+                    className="btn btn-outline btn-sm"
+                    style={{ 
+                      color: 'var(--danger)', 
+                      borderColor: 'rgba(239, 68, 68, 0.2)', 
+                      background: 'rgba(239, 68, 68, 0.05)',
+                      padding: '4px 10px',
+                      fontSize: '10px',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px'
+                    }}
+                  >
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{ marginRight: 4 }}><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                    Clear & Start Fresh
+                  </button>
+                  {step < 5 && (
+                    <button 
+                      onClick={handleNext}
+                      className="btn btn-primary btn-sm"
+                      style={{ 
+                        padding: '4px 16px',
+                        fontSize: '10px',
+                        fontWeight: 700,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px'
+                      }}
+                    >
+                      Next
+                    </button>
+                  )}
+                </div>
               </div>
                 <h2 className="form-step-title">{STEPS[step - 1].title}</h2>
 

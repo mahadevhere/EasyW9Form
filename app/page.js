@@ -49,7 +49,7 @@ export default function Home() {
     <>
       <VersionCheck />
       {/* ===== HERO ===== */}
-      <section className="hero bg-dot-pattern" style={{ background: 'linear-gradient(135deg, rgba(238, 242, 255, 0.95) 0%, rgba(219, 234, 254, 0.95) 30%, rgba(240, 253, 250, 0.95) 70%, rgba(248, 250, 252, 0.95) 100%)', paddingTop: '120px', paddingBottom: '100px', position: 'relative', overflow: 'hidden' }}>
+      <section className="hero bg-dot-pattern" style={{ background: 'linear-gradient(135deg, rgba(238, 242, 255, 0.95) 0%, rgba(219, 234, 254, 0.95) 30%, rgba(240, 253, 250, 0.95) 70%, rgba(248, 250, 252, 0.95) 100%)', paddingTop: '48px', paddingBottom: '60px', position: 'relative', overflow: 'hidden' }}>
         {/* Decorative blobs */}
         <div className="hero-blob" style={{ width: '500px', height: '500px', background: 'rgba(37, 99, 235, 0.12)', top: '-200px', right: '-100px' }} />
         <div className="hero-blob" style={{ width: '300px', height: '300px', background: 'rgba(139, 92, 246, 0.1)', bottom: '-100px', left: '-50px' }} />
@@ -61,31 +61,30 @@ export default function Home() {
             </div>
             <h1
               style={{
-                fontSize: "clamp(32px, 5vw, 60px)",
+                fontSize: "clamp(32px, 4vw, 48px)",
                 fontWeight: 900,
-                lineHeight: 1.1,
+                lineHeight: 1.15,
                 letterSpacing: "-0.02em",
-                marginBottom: "24px",
+                marginBottom: "20px",
               }}
             >
-              Fill Your W-9 Form in <br className="hide-mobile" />
-              2 Minutes —{" "}
-              <span className="gradient-text">100% Accurate.</span>
+              Get Your W-9 in 2 Minutes. <br className="hide-mobile" />
+              No Signups, No Data Storage. <br className="hide-mobile" />
+              <span className="gradient-text">Just a Perfect PDF.</span>
             </h1>
             <p
               className="hero-subtitle"
               style={{
-                margin: "0 auto 40px 0",
+                margin: "0 auto 24px 0",
                 maxWidth: "600px",
                 fontSize: "clamp(16px, 2vw, 20px)",
                 lineHeight: 1.6,
                 color: "var(--text-secondary)",
               }}
             >
-              No signup. No confusion. Guided IRS W-9 wizard with real-time PDF preview. Your data is encrypted and{" "}
-              <strong>never stored on our servers.</strong>
+              Trusted by 10,000+ freelancers. Don't let a messy W-9 delay your client payment.
             </p>
-            <div className="hero-buttons" style={{ marginBottom: '24px' }}>
+            <div className="hero-buttons" style={{ marginBottom: '16px' }}>
               <Link href="/fill-w9-form-online" className="btn btn-primary btn-lg" style={{ padding: '18px 40px', fontSize: '17px', borderRadius: '14px' }}>
                 Start Filling Now →
               </Link>
@@ -94,31 +93,26 @@ export default function Home() {
               </a>
             </div>
             
-            {/* Trust Proof Row */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', marginBottom: '40px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: 600, color: '#475569' }}>
-                <span style={{ color: '#059669', fontSize: '18px' }}>✔</span> 256-bit Encrypted
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '40px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: 600, color: '#475569' }}>
+                  <span style={{ color: '#059669', fontSize: '18px' }}>✔</span> 256-bit Encrypted
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: 600, color: '#475569' }}>
+                  <span style={{ color: '#059669', fontSize: '18px' }}>✔</span> No Data Stored
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: 600, color: '#475569' }}>
+                  <span style={{ color: '#059669', fontSize: '18px' }}>✔</span> Trusted by 10,000+ Users
+                </div>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: 600, color: '#475569' }}>
-                <span style={{ color: '#059669', fontSize: '18px' }}>✔</span> No Data Stored
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: 600, color: '#475569' }}>
-                <span style={{ color: '#059669', fontSize: '18px' }}>✔</span> Trusted by 10,000+ Users
-              </div>
-            </div>
-
-            <div className="hero-trust" style={{ borderTop: '1px solid var(--border)', paddingTop: '24px', gap: '32px' }}>
-              <div className="hero-trust-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>
-                Bank-Grade Security
-              </div>
-              <div className="hero-trust-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>
-                Official IRS Form W-9
-              </div>
-              <div className="hero-trust-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>
-                Instant PDF Delivery
+              
+              <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '16px', opacity: 0.8 }}>
+                <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px' }}>Trusted by professionals at:</span>
+                <span style={{ fontSize: '16px', fontWeight: 900, color: '#1E293B' }}>Upwork</span>
+                <span style={{ fontSize: '16px', fontWeight: 900, color: '#1E293B' }}>Toptal</span>
+                <span style={{ fontSize: '16px', fontWeight: 900, color: '#1E293B' }}>Fiverr</span>
+                <span style={{ fontSize: '16px', fontWeight: 900, color: '#1E293B' }}>Deel</span>
+                <span style={{ fontSize: '16px', fontWeight: 900, color: '#1E293B' }}>Rippling</span>
               </div>
             </div>
           </div>
@@ -183,21 +177,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== TRUST BAR ===== */}
-      <div style={{ background: 'white', borderBottom: '1px solid var(--border)', padding: '32px 0' }}>
-        <div className="container" style={{ textAlign: 'center' }}>
-          <p style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '24px' }}>
-            Used by professionals who work with
-          </p>
-          <div className="trust-bar-logos" style={{ opacity: 0.7 }}>
-            <span style={{ fontSize: '20px', fontWeight: 900, color: '#1E293B' }}>Upwork</span>
-            <span style={{ fontSize: '20px', fontWeight: 900, color: '#1E293B' }}>Toptal</span>
-            <span style={{ fontSize: '20px', fontWeight: 900, color: '#1E293B' }}>Fiverr</span>
-            <span style={{ fontSize: '20px', fontWeight: 900, color: '#1E293B' }}>Deel</span>
-            <span style={{ fontSize: '20px', fontWeight: 900, color: '#1E293B' }}>Remote.com</span>
-          </div>
-        </div>
-      </div>
+      {/* ===== TRUST BAR (Moved Above Fold) ===== */}
+      {/* Keeping empty for structure, logos moved to hero */}
 
       {/* ===== HOW IT WORKS ===== */}
       <section className="section section-light bg-grid-pattern" id="how-it-works" style={{ position: 'relative' }}>
@@ -229,62 +210,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== WHY EASYW9FORM vs COMPETITORS ===== */}
+      {/* ===== WHY EASYW9FORM ===== */}
       <section className="section" style={{ background: 'white' }}>
         <div className="container">
           <div className="section-header">
-            <div className="section-label">Why EasyW9Form?</div>
+            <div className="section-label">Why Us?</div>
             <h2 className="section-title">The smartest way to fill W-9 forms online</h2>
             <p className="section-desc">
-              See how we compare to other options for filling out your W-9 form.
+              Designed for freelancers who need to get paid today.
             </p>
           </div>
           
-          <div style={{ overflowX: 'auto', margin: '0 -16px', padding: '0 16px' }}>
-            <table style={{ 
-              width: '100%', 
-              borderCollapse: 'separate', 
-              borderSpacing: 0, 
-              fontSize: '14px',
-              border: '1px solid var(--border)',
-              borderRadius: '16px',
-              overflow: 'hidden',
-              minWidth: '700px'
-            }}>
-              <thead>
-                <tr style={{ background: '#f8fafc' }}>
-                  <th style={{ padding: '16px 20px', textAlign: 'left', fontWeight: 600, borderBottom: '2px solid var(--border)', color: 'var(--text-secondary)' }}>Feature</th>
-                  <th style={{ padding: '16px 20px', textAlign: 'center', fontWeight: 800, borderBottom: '2px solid var(--primary)', background: 'var(--primary-subtle)', color: 'var(--primary)' }}>
-                    EasyW9Form ⭐
-                  </th>
-                  <th style={{ padding: '16px 20px', textAlign: 'center', fontWeight: 600, borderBottom: '2px solid var(--border)', color: 'var(--text-secondary)' }}>IRS PDF (Manual)</th>
-                  <th style={{ padding: '16px 20px', textAlign: 'center', fontWeight: 600, borderBottom: '2px solid var(--border)', color: 'var(--text-secondary)' }}>TurboTax / H&R Block</th>
-                  <th style={{ padding: '16px 20px', textAlign: 'center', fontWeight: 600, borderBottom: '2px solid var(--border)', color: 'var(--text-secondary)' }}>Other W9 Fillers</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ['Price', '$3.99 one-time', 'Free', '$20–$89/yr subscription', '$5–$15'],
-                  ['AI Smart Scanner', '✅ Gemini Vision OCR', '❌ None', '❌ None', '❌ None'],
-                  ['Guided Wizard', '✅ Step-by-step', '❌ DIY', '✅ But overkill', '⚠️ Basic'],
-                  ['Real-time PDF Preview', '✅ Live preview', '❌ None', '❌ None', '⚠️ Limited'],
-                  ['Digital Signatures', '✅ Type, Draw, Upload', '❌ Manual', '⚠️ Limited', '⚠️ Limited'],
-                  ['No Signup Required', '✅ No account', '✅', '❌ Account required', '❌ Account required'],
-                  ['Zero Data Storage', '✅ SSN/EIN never stored', '✅ (it\'s paper)', '❌ Stores your data', '❌ Stores your data'],
-                  ['IRS Compliance Check', '✅ Built-in validation', '❌ Manual', '✅', '⚠️ Partial'],
-                  ['Instant Download', '✅ Seconds', '⚠️ Print only', '⚠️ After signup', '⚠️ After signup'],
-                  ['Mobile Friendly', '✅ Works on any device', '❌ Not fillable on phone', '✅', '⚠️ Varies'],
-                ].map(([feature, ours, irs, turbo, other], i) => (
-                  <tr key={i} style={{ background: i % 2 === 0 ? 'white' : '#fafbfc' }}>
-                    <td style={{ padding: '14px 20px', fontWeight: 600, borderBottom: '1px solid #f1f5f9' }}>{feature}</td>
-                    <td style={{ padding: '14px 20px', textAlign: 'center', borderBottom: '1px solid #f1f5f9', fontWeight: 600, color: 'var(--primary)', background: i % 2 === 0 ? 'rgba(37,99,235,0.03)' : 'rgba(37,99,235,0.06)' }}>{ours}</td>
-                    <td style={{ padding: '14px 20px', textAlign: 'center', borderBottom: '1px solid #f1f5f9', color: 'var(--text-secondary)' }}>{irs}</td>
-                    <td style={{ padding: '14px 20px', textAlign: 'center', borderBottom: '1px solid #f1f5f9', color: 'var(--text-secondary)' }}>{turbo}</td>
-                    <td style={{ padding: '14px 20px', textAlign: 'center', borderBottom: '1px solid #f1f5f9', color: 'var(--text-secondary)' }}>{other}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px', marginTop: '40px' }}>
+            <div className="glass-panel" style={{ padding: '32px', borderRadius: 'var(--radius-xl)', border: '1px solid var(--border)', background: '#F8FAFC' }}>
+              <div style={{ fontSize: '40px', marginBottom: '20px' }}>🔒</div>
+              <h3 style={{ fontSize: '22px', fontWeight: 800, marginBottom: '16px' }}>Privacy-First</h3>
+              <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>We never store your SSN or EIN. It's encrypted in your browser and deleted the moment you download.</p>
+            </div>
+            
+            <div className="glass-panel" style={{ padding: '32px', borderRadius: 'var(--radius-xl)', border: '1px solid var(--border)', background: '#F8FAFC' }}>
+              <div style={{ fontSize: '40px', marginBottom: '20px' }}>✅</div>
+              <h3 style={{ fontSize: '22px', fontWeight: 800, marginBottom: '16px' }}>Zero Errors</h3>
+              <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>Our AI verifies your inputs against IRS rules. No 'Return to sender' requests from accounting teams.</p>
+            </div>
+            
+            <div className="glass-panel" style={{ padding: '32px', borderRadius: 'var(--radius-xl)', border: '1px solid var(--border)', background: '#F8FAFC' }}>
+              <div style={{ fontSize: '40px', marginBottom: '20px' }}>📄</div>
+              <h3 style={{ fontSize: '22px', fontWeight: 800, marginBottom: '16px' }}>Client-Ready</h3>
+              <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>Professional, clean, and 100% accepted by major platforms like Upwork, Deel, and Rippling.</p>
+            </div>
           </div>
         </div>
       </section>
