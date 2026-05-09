@@ -3,8 +3,10 @@ import FAQAccordion from '@/components/FAQAccordion';
 import VersionCheck from '@/components/VersionCheck';
 
 export const metadata = {
+  title: 'Fillable W-9 Form Online — Free W9 Form Generator | Instant PDF Download',
+  description: 'Fill out your W-9 form online with our free fillable W9 generator. Electronic W-9 tax form with guided wizard, digital e-signature, and instant PDF download. No signup, no data stored. Trusted by 10,000+ freelancers.',
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.easyw9form.com',
   },
 };
 
@@ -68,9 +70,9 @@ export default function Home() {
                 marginBottom: "20px",
               }}
             >
-              Get Your W-9 in 2 Minutes. <br className="hide-mobile" />
-              No Signups, No Data Storage. <br className="hide-mobile" />
-              <span className="gradient-text">Just a Perfect PDF.</span>
+              Fillable W-9 Form Online — <br className="hide-mobile" />
+              Free W9 Form Generator <br className="hide-mobile" />
+              <span className="gradient-text">with Instant PDF Download</span>
             </h1>
             <p
               className="hero-subtitle"
@@ -82,11 +84,11 @@ export default function Home() {
                 color: "var(--text-secondary)",
               }}
             >
-              Trusted by 10,000+ freelancers. Don't let a messy W-9 delay your client payment.
+              The fastest electronic W-9 tax form online. Fill out, e-sign, and download your secure, fillable W-9 PDF in under 2 minutes. No signup required — trusted by 10,000+ freelancers and contractors.
             </p>
             <div className="hero-buttons" style={{ marginBottom: '16px' }}>
               <Link href="/fill-w9-form-online" className="btn btn-primary btn-lg" style={{ padding: '18px 40px', fontSize: '17px', borderRadius: '14px' }}>
-                Start Filling Now →
+                Fill Out W-9 Online Now →
               </Link>
               <a href="#how-it-works" className="btn btn-outline btn-lg" style={{ padding: '18px 32px' }}>
                 See How It Works
@@ -185,7 +187,7 @@ export default function Home() {
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div className="section-header">
             <div className="section-label">How It Works</div>
-            <h2 className="section-title">Fill out your W-9 form in three simple steps</h2>
+            <h2 className="section-title">How to Fill Out Your W-9 Form Online in 3 Easy Steps</h2>
             <p className="section-desc">
               No learning curve. Answer a few questions and get your IRS-ready W-9 PDF instantly.
             </p>
@@ -215,7 +217,7 @@ export default function Home() {
         <div className="container">
           <div className="section-header">
             <div className="section-label">Why Us?</div>
-            <h2 className="section-title">The smartest way to fill W-9 forms online</h2>
+            <h2 className="section-title">Why choose our online fillable W-9 form generator?</h2>
             <p className="section-desc">
               Designed for freelancers who need to get paid today.
             </p>
@@ -381,7 +383,7 @@ export default function Home() {
             Join thousands of freelancers who trust EasyW9Form. Takes less than 2 minutes.
           </p>
           <Link href="/fill-w9-form-online" className="btn btn-lg cta-btn" style={{ background: 'white', color: 'var(--primary-dark)', fontWeight: 800, borderRadius: '100px', padding: '20px 48px', fontSize: '18px', boxShadow: '0 20px 40px rgba(0,0,0,0.2)', transition: 'all 0.3s ease' }}>
-            Fill My W-9 Now — Only $3.99 →
+            Fill Out W-9 Online Now — Only $3.99 →
           </Link>
         </div>
       </section>
@@ -428,64 +430,72 @@ export default function Home() {
       <section className="section seo-section" style={{ background: '#f8fafc', borderTop: '1px solid var(--border)' }}>
         <div className="container">
           <div className="section-header">
-            <div className="section-label">Knowledge Base</div>
-            <h2 className="section-title">W-9 Form Resources & Information</h2>
+            <div className="section-label">W-9 Form Guide</div>
+            <h2 className="section-title">Everything You Need to Know About Filling Out a W-9 Form Online</h2>
             <p className="section-desc">
-              Everything you need to know about the IRS Request for Taxpayer Identification Number and Certification.
+              Your complete resource for the IRS W-9 form — what it is, who needs one, and how to fill it out securely online.
             </p>
           </div>
 
-          <div className="split-section-grid" style={{ gap: '32px' }}>
-            {/* Card 1 */}
-            <div className="glass-panel" style={{ padding: '32px', borderRadius: 'var(--radius-xl)', background: 'white', border: '1px solid var(--border)', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: '#EFF6FF', color: '#3B82F6', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px' }}>
-                  📄
-                </div>
-                <h3 style={{ fontSize: '18px', fontWeight: 800, color: '#0F172A', margin: 0 }}>What is a W-9 Form?</h3>
-              </div>
-              <p style={{ fontSize: '15px', color: '#475569', lineHeight: 1.6, margin: 0 }}>
-                A W-9 form is an official IRS document used in the US. When you work as an independent contractor or freelancer, clients need your W-9 to report payments to you on a 1099 form. It collects your legal name, business classification, and TIN (SSN or EIN).
-              </p>
-            </div>
+          {/* Long-form SEO content */}
+          <div style={{ maxWidth: '900px', margin: '0 auto', fontSize: '16px', lineHeight: 1.8, color: '#334155' }}>
+            
+            <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#0F172A', marginBottom: '16px', marginTop: '32px' }}>What Is a Fillable W-9 Form?</h3>
+            <p>
+              A <strong>fillable W-9 form</strong> is a digital version of the IRS Form W-9 (Request for Taxpayer Identification Number and Certification) that you can complete online without printing. Unlike the static PDF from irs.gov, an <strong>online fillable W-9 form</strong> lets you type your information directly, validates your inputs in real-time, and generates a clean, professional PDF ready to submit to any client or employer.
+            </p>
+            <p>
+              Our <strong>W-9 form generator</strong> takes this a step further by providing a guided wizard that walks you through every field — from your legal name and federal tax classification to your SSN or EIN — eliminating the confusion that comes with the official IRS form.
+            </p>
 
-            {/* Card 2 */}
-            <div className="glass-panel" style={{ padding: '32px', borderRadius: 'var(--radius-xl)', background: 'white', border: '1px solid var(--border)', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: '#F0FDF4', color: '#22C55E', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px' }}>
-                  💻
-                </div>
-                <h3 style={{ fontSize: '18px', fontWeight: 800, color: '#0F172A', margin: 0 }}>How to Fill It Out Online</h3>
-              </div>
-              <p style={{ fontSize: '15px', color: '#475569', lineHeight: 1.6, margin: 0 }}>
-                Filling out a W-9 requires your name exactly as it appears on your tax return, the correct federal tax classification, and your TIN. Our guided W-9 form filler eliminates formatting errors by walking you through each field with real-time validation.
-              </p>
-            </div>
+            <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#0F172A', marginBottom: '16px', marginTop: '32px' }}>Who Needs to Fill Out a W-9 Form Online?</h3>
+            <p>
+              If you are a freelancer, independent contractor, sole proprietor, or vendor in the United States, you will need to fill out a W-9 form whenever a client or business requests one. The IRS requires companies to collect W-9 forms from anyone they pay $600 or more per year so they can report those payments on a 1099-NEC form. Need to know exactly when? Read our detailed guide on <Link href="/blog/when-do-you-need-a-w9" style={{ color: 'var(--primary)', fontWeight: 600 }}>when you need a W-9 form</Link>.
+            </p>
 
-            {/* Card 3 */}
-            <div className="glass-panel" style={{ padding: '32px', borderRadius: 'var(--radius-xl)', background: 'white', border: '1px solid var(--border)', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: '#FEF2F2', color: '#EF4444', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px' }}>
-                  ⚠️
-                </div>
-                <h3 style={{ fontSize: '18px', fontWeight: 800, color: '#0F172A', margin: 0 }}>Common Mistakes to Avoid</h3>
-              </div>
-              <p style={{ fontSize: '15px', color: '#475569', lineHeight: 1.6, margin: 0 }}>
-                The most frequent error is using a nickname or DBA on Line 1 instead of your legal tax name. Incorrect entity types (like checking "C Corp" for a single-member LLC) or TIN formats can cause issues. Our tool automatically flags these errors.
-              </p>
-            </div>
+            <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#0F172A', marginBottom: '16px', marginTop: '32px' }}>How to Fill Out a W-9 Form Online</h3>
+            <p>
+              Filling out an <strong>electronic W-9 form</strong> online with EasyW9Form takes less than 2 minutes. Our <strong>digital W-9 form</strong> wizard guides you through five simple steps:
+            </p>
+            <ol style={{ paddingLeft: '24px', marginBottom: '20px' }}>
+              <li style={{ marginBottom: '8px' }}><strong>Enter your legal name</strong> — exactly as it appears on your federal tax return (Line 1 of the W-9).</li>
+              <li style={{ marginBottom: '8px' }}><strong>Select your tax classification</strong> — Individual, LLC, S-Corp, C-Corp, Partnership, or Trust. Not sure which? See our <Link href="/guides/how-to-fill-w9" style={{ color: 'var(--primary)', fontWeight: 600 }}>step-by-step W-9 guide</Link>.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Add your address</strong> — the mailing address where you receive tax documents.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Enter your TIN</strong> — your SSN or EIN. Don&apos;t have an EIN? Learn <Link href="/guides/what-to-do-without-ein" style={{ color: 'var(--primary)', fontWeight: 600 }}>what to do if you don&apos;t have an EIN</Link>.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Sign and download</strong> — e-sign digitally and get your <strong>instant W-9 PDF</strong> delivered immediately.</li>
+            </ol>
 
-            {/* Card 4 */}
-            <div className="glass-panel" style={{ padding: '32px', borderRadius: 'var(--radius-xl)', background: 'white', border: '1px solid var(--border)', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: '#FAF5FF', color: '#A855F7', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px' }}>
-                  ⚡
-                </div>
-                <h3 style={{ fontSize: '18px', fontWeight: 800, color: '#0F172A', margin: 0 }}>Download Instantly</h3>
-              </div>
-              <p style={{ fontSize: '15px', color: '#475569', lineHeight: 1.6, margin: 0 }}>
-                Generate a completed, IRS-ready W-9 PDF in under two minutes. Your information is processed securely using 256-bit encryption and never stored on our servers. Download a professionally filled W-9 ready to submit to any client.
+            <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#0F172A', marginBottom: '16px', marginTop: '32px' }}>Is It Safe to Fill Out a W-9 Online?</h3>
+            <p>
+              Security is our top priority. Our <strong>secure W-9 online</strong> generator uses 256-bit encryption to process your information entirely in your browser. Your SSN and EIN are never stored on our servers — we maintain a strict Zero-Data-Storage policy. This makes filling out your W-9 online significantly safer than emailing an unencrypted PDF. Learn more about our <Link href="/guides/secure-w9-generation" style={{ color: 'var(--primary)', fontWeight: 600 }}>W-9 security architecture</Link>.
+            </p>
+
+            <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#0F172A', marginBottom: '16px', marginTop: '32px' }}>W-9 for LLCs and Independent Contractors</h3>
+            <p>
+              If you have an LLC, the W-9 form can be especially confusing. Single-member LLCs check &quot;Individual/Sole Proprietor&quot; while multi-member LLCs check &quot;LLC&quot; and must specify a tax classification (C, S, or P). Getting this wrong can trigger 24% backup withholding. Read our complete guide on <Link href="/blog/w9-form-for-llc" style={{ color: 'var(--primary)', fontWeight: 600 }}>how to fill out a W-9 for an LLC</Link>.
+            </p>
+            <p>
+              As an <strong>independent contractor</strong>, you&apos;ll encounter W-9 requests from every new client. Our <Link href="/guides/w9-for-independent-contractors" style={{ color: 'var(--primary)', fontWeight: 600 }}>freelancer&apos;s guide to Form W-9</Link> covers everything from SSN vs EIN decisions to keeping your information secure.
+            </p>
+
+            <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#0F172A', marginBottom: '16px', marginTop: '32px' }}>W-9 vs W-4: Which Form Do You Need?</h3>
+            <p>
+              Confused between a W-9 and a W-4? The <strong>W-9 form</strong> is for independent contractors and freelancers (1099 workers), while the W-4 is for employees (W-2 workers). If a company is paying you as a contractor, you need a W-9. Read our full comparison of <Link href="/guides/tax-difference-w9-vs-w4" style={{ color: 'var(--primary)', fontWeight: 600 }}>W-9 vs W-4 differences</Link>.
+            </p>
+
+            <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#0F172A', marginBottom: '16px', marginTop: '32px' }}>W-9 for Rental Property Owners</h3>
+            <p>
+              Landlords and property owners may need to provide or collect W-9 forms for rental payments, contractor services, and property management fees. Learn about <Link href="/blog/w9-form-for-rental-property" style={{ color: 'var(--primary)', fontWeight: 600 }}>W-9 requirements for rental property</Link>.
+            </p>
+
+            <div style={{ background: 'white', border: '2px solid var(--primary-light)', borderRadius: '16px', padding: '32px', marginTop: '40px', textAlign: 'center' }}>
+              <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#0F172A', marginBottom: '12px' }}>Ready to Fill Out Your W-9 Form Online?</h3>
+              <p style={{ color: '#64748B', marginBottom: '24px', fontSize: '16px' }}>
+                Use our free <strong>fillable W-9 form generator</strong> to complete your IRS W-9 in under 2 minutes. Secure, electronic, and instant.
               </p>
+              <Link href="/fill-w9-form-online" className="btn btn-primary btn-lg" style={{ padding: '18px 48px', fontSize: '17px', borderRadius: '14px' }}>
+                Fill Out W-9 Online Now →
+              </Link>
             </div>
           </div>
         </div>

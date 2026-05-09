@@ -4,7 +4,14 @@ import Link from 'next/link';
 export const metadata = {
   title: "What to do if you don't have an EIN as a freelancer | EasyW9Form",
   description: "Learn what to do if you are a freelancer without an Employer Identification Number (EIN) when filling out a W-9 form. Discover if you can use your SSN instead.",
-  alternates: { canonical: '/guides/what-to-do-without-ein' },
+  alternates: { canonical: 'https://www.easyw9form.com/guides/what-to-do-without-ein' },
+  openGraph: {
+    title: "What to Do if You Don't Have an EIN as a Freelancer",
+    description: "Learn what to do if you're a freelancer without an EIN when filling out a W-9. Can you use your SSN instead?",
+    url: 'https://www.easyw9form.com/guides/what-to-do-without-ein',
+    type: 'article',
+    siteName: 'EasyW9Form',
+  },
 };
 
 export default function GuidePage() {

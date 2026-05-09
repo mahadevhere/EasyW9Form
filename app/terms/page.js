@@ -4,7 +4,14 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Terms of Service — EasyW9Form',
   description: 'Read the terms of service for EasyW9Form, the secure online W-9 form generator.',
-  alternates: { canonical: '/terms' },
+  alternates: { canonical: 'https://www.easyw9form.com/terms' },
+  openGraph: {
+    title: 'Terms of Service — EasyW9Form',
+    description: 'Terms of service for EasyW9Form, the secure online W-9 form generator.',
+    url: 'https://www.easyw9form.com/terms',
+    type: 'website',
+    siteName: 'EasyW9Form',
+  },
 };
 
 export default function TermsPage() {

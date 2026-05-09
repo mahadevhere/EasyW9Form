@@ -4,7 +4,14 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Refund Policy — EasyW9Form',
   description: 'Learn about EasyW9Form\'s refund policy. All sales are final for digital PDF downloads.',
-  alternates: { canonical: '/refund' },
+  alternates: { canonical: 'https://www.easyw9form.com/refund' },
+  openGraph: {
+    title: 'Refund Policy — EasyW9Form',
+    description: 'EasyW9Form\'s refund policy for digital PDF W-9 form downloads.',
+    url: 'https://www.easyw9form.com/refund',
+    type: 'website',
+    siteName: 'EasyW9Form',
+  },
 };
 
 export default function RefundPage() {

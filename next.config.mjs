@@ -27,6 +27,18 @@ const securityHeaders = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  trailingSlash: false,
+  async redirects() {
+    return [
+      // Non-www to www redirect (catches any path)
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'easyw9form.com' }],
+        destination: 'https://www.easyw9form.com/:path*',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

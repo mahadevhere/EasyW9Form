@@ -8,6 +8,13 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.easyw9form.com/blog/w9-form-for-llc',
   },
+  openGraph: {
+    title: 'How to Fill Out a W-9 Form for an LLC (2026 Guide)',
+    description: 'Complete guide to filling out IRS Form W-9 for your LLC. Learn which box to check and whether to use SSN or EIN.',
+    url: 'https://www.easyw9form.com/blog/w9-form-for-llc',
+    type: 'article',
+    siteName: 'EasyW9Form',
+  },
 };
 
 export default function BlogPage() {

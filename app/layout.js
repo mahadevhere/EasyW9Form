@@ -8,14 +8,14 @@ const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
 export const metadata = {
   title: {
-    default: 'Free W-9 Form Generator | Fill Online & Instant PDF Download',
+    default: 'Fillable W-9 Form Online — Free W9 Form Generator | EasyW9Form',
     template: '%s | EasyW9Form',
   },
-  description: 'Fill out your IRS W-9 form online instantly. Secure, fillable W-9 form generator with guided wizard and instant PDF download. Zero data storage policy.',
-  keywords: 'w9 form generator, w9 form online, online w 9 form, w9 tax form online, instant w9 pdf, fillable w-9 form, electronic w9 form, digital w9 form, free w9 generator',
+  description: 'Fill out your W-9 form online instantly. Free, secure, fillable W-9 form generator with guided wizard, electronic e-signature, and instant PDF download. Digital W9 tax form — no signup, zero data storage.',
+  keywords: 'fillable w9 form, w9 form online, fillable w-9 form, online w9 form, w9 form generator, w9 tax form online, electronic w9 form, digital w9 form, fillable w9, w9 online, fill out w9 online, w9 generator, w9 fillable form online, online fillable w9 form, secure w9 online, instant w9 pdf, free w9 form online, w9 creator, fill w9 online, w9 online form',
   openGraph: {
-    title: 'W-9 Form Generator | Fill Online & Instant PDF Download',
-    description: 'The most secure online W-9 form generator. Guided wizard, live preview, and instant IRS-ready PDF. No signup required.',
+    title: 'Fillable W-9 Form Online — Free W9 Generator | Instant PDF Download',
+    description: 'Fill out your W-9 form online for free. Secure, fillable W9 form generator with guided wizard, electronic signature, and instant PDF download. Zero data storage.',
     url: 'https://www.easyw9form.com',
     type: 'website',
     siteName: 'EasyW9Form',

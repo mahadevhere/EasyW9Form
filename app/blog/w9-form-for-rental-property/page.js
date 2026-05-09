@@ -8,6 +8,13 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.easyw9form.com/blog/w9-form-for-rental-property',
   },
+  openGraph: {
+    title: 'W-9 Form for Rental Property: Landlord & Tenant Guide',
+    description: 'When do landlords need a W-9? Requirements for rental property owners, managers, and tenants.',
+    url: 'https://www.easyw9form.com/blog/w9-form-for-rental-property',
+    type: 'article',
+    siteName: 'EasyW9Form',
+  },
 };
 
 export default function BlogPage() {

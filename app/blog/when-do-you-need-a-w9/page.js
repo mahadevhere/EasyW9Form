@@ -8,6 +8,13 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.easyw9form.com/blog/when-do-you-need-a-w9',
   },
+  openGraph: {
+    title: 'When Do You Need a W-9 Form? (Complete 2026 Guide)',
+    description: 'Find out exactly when you need a W-9. Covers freelancers, landlords, banks, real estate, and the $600 threshold.',
+    url: 'https://www.easyw9form.com/blog/when-do-you-need-a-w9',
+    type: 'article',
+    siteName: 'EasyW9Form',
+  },
 };
 
 export default function BlogPage() {
