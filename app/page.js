@@ -3,8 +3,10 @@ import FAQAccordion from '@/components/FAQAccordion';
 import VersionCheck from '@/components/VersionCheck';
 
 export const metadata = {
-  title: 'Fillable W-9 Form Online — Free W9 Form Generator | Instant PDF Download',
-  description: 'Fill out your W-9 form online with our free fillable W9 generator. Electronic W-9 tax form with guided wizard, digital e-signature, and instant PDF download. No signup, no data stored. Trusted by 10,000+ freelancers.',
+  title: {
+    absolute: 'Fillable W-9 Form Online — Free W9 Generator | EasyW9Form',
+  },
+  description: 'Fill out your W-9 form online in 2 minutes. Free guided wizard, digital e-signature, and instant PDF download. No signup required, zero data stored.',
   alternates: {
     canonical: 'https://www.easyw9form.com',
   },
@@ -486,6 +488,16 @@ export default function Home() {
             <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#0F172A', marginBottom: '16px', marginTop: '32px' }}>W-9 for Rental Property Owners</h3>
             <p>
               Landlords and property owners may need to provide or collect W-9 forms for rental payments, contractor services, and property management fees. Learn about <Link href="/blog/w9-form-for-rental-property" style={{ color: 'var(--primary)', fontWeight: 600 }}>W-9 requirements for rental property</Link>.
+            </p>
+
+            <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#0F172A', marginBottom: '16px', marginTop: '32px' }}>How Are the W-9 and 1099 Connected?</h3>
+            <p>
+              The W-9 and 1099 are two sides of the same reporting process. You <strong>give</strong> a W-9 to your client; your client <strong>gives you</strong> a 1099-NEC showing how much they paid you. Understanding this connection helps you stay compliant and avoid surprises at tax time. Read our full breakdown of <Link href="/blog/w9-vs-1099" style={{ color: 'var(--primary)', fontWeight: 600 }}>how W-9 and 1099 forms work together</Link>.
+            </p>
+
+            <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#0F172A', marginBottom: '16px', marginTop: '32px' }}>What Happens If You Don&apos;t Provide a W-9?</h3>
+            <p>
+              Refusing to provide a W-9 triggers <strong>24% backup withholding</strong> — your client must withhold nearly a quarter of every payment and send it to the IRS. Learn about the full consequences and how to resolve them in our guide on <Link href="/blog/what-happens-no-w9" style={{ color: 'var(--primary)', fontWeight: 600 }}>what happens when you don&apos;t provide a W-9</Link>.
             </p>
 
             <div style={{ background: 'white', border: '2px solid var(--primary-light)', borderRadius: '16px', padding: '32px', marginTop: '40px', textAlign: 'center' }}>

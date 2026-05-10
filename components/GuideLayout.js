@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-export default function GuideLayout({ children, title, subtitle, lastUpdated, headerImage }) {
+export default function GuideLayout({ children, title, subtitle, lastUpdated, headerImage, faqs }) {
   const pathname = usePathname();
   
   const guides = [
@@ -11,13 +11,37 @@ export default function GuideLayout({ children, title, subtitle, lastUpdated, he
     { href: '/guides/tax-difference-w9-vs-w4', label: 'W-9 vs. W-4' },
     { href: '/guides/w9-for-independent-contractors', label: 'Freelancer Guide' },
     { href: '/guides/secure-w9-generation', label: 'Security & Privacy' },
+    { href: '/guides/what-to-do-without-ein', label: 'No EIN? Use SSN' },
     { href: '/blog/w9-form-for-llc', label: 'W-9 for LLCs' },
     { href: '/blog/when-do-you-need-a-w9', label: 'When Do You Need a W-9?' },
     { href: '/blog/w9-form-for-rental-property', label: 'W-9 for Rental Property' },
+    { href: '/blog/w9-vs-1099', label: 'W-9 vs 1099 Explained' },
+    { href: '/blog/what-happens-no-w9', label: 'No W-9? Consequences' },
   ];
+
+  /* ── FAQ Schema (JSON-LD) for Google Rich Results ── */
+  const faqSchema = faqs && faqs.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  } : null;
 
   return (
     <div className="section guide-layout-wrapper" style={{ background: '#F8FAFC', minHeight: '100vh', paddingTop: '100px', paddingBottom: '80px' }}>
+      {/* FAQ Schema for Google Rich Results */}
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <div className="container">
         <div className="guide-layout-grid">
           

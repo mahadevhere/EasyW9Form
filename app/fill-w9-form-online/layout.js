@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Fill Out W-9 Form Online — Secure W-9 Generator | EasyW9Form',
+  title: 'Fill Out W-9 Form Online — Secure W-9 Generator',
   description:
     'Fill out your IRS W-9 form online in under 5 minutes. Guided step-by-step wizard with digital e-signature, instant PDF download, and zero data storage.',
   alternates: {

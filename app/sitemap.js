@@ -1,6 +1,6 @@
 export default function sitemap() {
   const baseUrl = 'https://www.easyw9form.com';
-  const today = new Date().toISOString().split('T')[0];
+  const today = '2026-05-10';
 
   return [
     {
@@ -61,6 +61,18 @@ export default function sitemap() {
     },
     {
       url: `${baseUrl}/blog/w9-form-for-rental-property`,
+      lastModified: today,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/w9-vs-1099`,
+      lastModified: today,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/what-happens-no-w9`,
       lastModified: today,
       changeFrequency: 'monthly',
       priority: 0.7,

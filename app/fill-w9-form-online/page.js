@@ -618,6 +618,7 @@ export default function FillW9Form() {
 
   return (
     <div className="form-page">
+      <h1 style={{ position: 'absolute', width: 1, height: 1, padding: 0, margin: -1, overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', borderWidth: 0 }}>Fill Out W-9 Form Online</h1>
       {showRestoreOverlay && !isInitialized && (
         <div style={{ position: 'fixed', inset: 0, background: 'rgba(255,255,255,0.9)', zIndex: 9999, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
           <div style={{ width: 40, height: 40, border: '4px solid #f3f3f3', borderTop: '4px solid var(--primary)', borderRadius: '50%', marginBottom: 16, animation: 'spin 1s linear infinite' }}></div>
