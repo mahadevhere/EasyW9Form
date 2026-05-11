@@ -18,18 +18,19 @@ export default function PrivacyPage() {
     <LegalLayout title="Privacy Policy" lastUpdated="April 20, 2026">
       <div style={{ background: 'var(--primary-subtle)', border: '1px solid var(--primary-light)', borderRadius: '12px', padding: '20px 24px', marginBottom: '40px' }}>
         <p style={{ margin: 0, fontWeight: 600, color: 'var(--primary)', fontSize: '14px' }}>
-          🔒 TL;DR — We do NOT store your Social Security Number, EIN, or any sensitive tax data. Period. Your information is processed in your browser and discarded immediately after PDF generation.
+          🔒 TL;DR — We do NOT store your Social Security Number, EIN, or any sensitive tax data. Your information is <strong>processed locally in-browser</strong>. We guarantee <strong>no server-side storage</strong> and <strong>zero-retention handling</strong> of your tax data. Files are not uploaded to our servers.
         </p>
       </div>
 
-      <h2>1. Zero-Data-Storage Architecture</h2>
-      <p>EasyW9Form (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to protecting your privacy. We have engineered our platform with a <strong>Privacy-by-Design architecture</strong> that fundamentally cannot store sensitive user data:</p>
+      <h2>1. Zero-Data-Storage & In-Browser Processing</h2>
+      <p>EasyW9Form (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to protecting your privacy. We have engineered our platform with a strict <strong>Privacy-by-Design architecture</strong>. To ensure maximum security, we explicitly guarantee the following:</p>
       <ul>
-        <li><strong>Taxpayer Identification Numbers (SSN/EIN):</strong> Processed entirely within your browser&apos;s memory. Never transmitted to or stored on our servers in plain text or encrypted form.</li>
-        <li><strong>Form Data (name, address, tax classification):</strong> Used in-memory solely for the purpose of generating your W-9 PDF document. Discarded immediately after generation.</li>
-        <li><strong>PDF Documents:</strong> Generated server-side and delivered instantly to your browser for download. We do not retain copies of generated PDFs.</li>
+        <li><strong>Processed Locally In-Browser:</strong> Your Taxpayer Identification Numbers (SSN/EIN) and sensitive form data are processed entirely within your device&apos;s browser memory.</li>
+        <li><strong>No Server-Side Storage:</strong> Your tax information is never transmitted to, saved on, or logged by our servers or databases. Files are not uploaded.</li>
+        <li><strong>Zero-Retention Handling:</strong> All data is used strictly in-memory solely for the purpose of generating your W-9 PDF document and is discarded immediately and permanently after generation.</li>
+        <li><strong>No Third-Party Sharing:</strong> Because we do not store your W-9 data, it is impossible for us to share, sell, or expose it to third parties.</li>
       </ul>
-      <p>This architecture ensures that even in the event of a data breach, there would be <strong>no sensitive taxpayer information</strong> to compromise.</p>
+      <p>This architecture ensures that even in the highly unlikely event of a data breach, there would be <strong>absolutely no sensitive taxpayer information</strong> to compromise.</p>
 
       <h2>2. Information We Collect</h2>
       <p>We collect only the minimum information necessary to provide our service and comply with legal obligations:</p>

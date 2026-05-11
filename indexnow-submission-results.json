@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-05-10T17:12:33.042Z",
+  "projects": [
+    {
+      "domain": "easyw9form.com",
+      "totalUrls": 15,
+      "batchesProcessed": 1,
+      "successfulBatches": 1,
+      "failedBatches": 0,
+      "details": [
+        {
+          "batchNumber": 1,
+          "urlCount": 15,
+          "success": true,
+          "statusCode": 200,
+          "error": null
+        }
+      ]
+    }
+  ]
+}

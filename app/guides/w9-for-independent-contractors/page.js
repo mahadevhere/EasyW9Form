@@ -14,20 +14,63 @@ export const metadata = {
   },
 };
 
+/* ── Structured Data (server-rendered for crawler visibility) ── */
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'W-9 for Independent Contractors & Freelancers',
+  description: 'A comprehensive guide for freelancers and independent contractors on how to handle W-9 requests, SSN vs EIN, and 1099 compliance.',
+  url: 'https://www.easyw9form.com/guides/w9-for-independent-contractors',
+  datePublished: '2026-04-20',
+  dateModified: '2026-05-10',
+  author: { '@type': 'Organization', name: 'EasyW9Form', url: 'https://www.easyw9form.com' },
+  publisher: {
+    '@type': 'Organization', name: 'EasyW9Form', url: 'https://www.easyw9form.com',
+    logo: { '@type': 'ImageObject', url: 'https://www.easyw9form.com/og-image.png' },
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.easyw9form.com/guides/w9-for-independent-contractors' },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Can I refuse to provide a W-9?', acceptedAnswer: { '@type': 'Answer', text: "Legally yes, but the client must then withhold 24% of your payments as backup withholding and send it to the IRS. You'd get this back when filing your return, but it significantly reduces your cash flow." } },
+    { '@type': 'Question', name: 'Does a W-9 expire?', acceptedAnswer: { '@type': 'Answer', text: 'No. A W-9 has no expiration date, but submit a new one whenever your name, address, or TIN changes. Many companies request updated W-9s annually.' } },
+    { '@type': 'Question', name: 'Do I need a separate W-9 for each client?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Each payer needs their own copy on file to issue a 1099. The information is the same, but each client must have one.' } },
+    { '@type': 'Question', name: "What if I'm both an employee and a freelancer?", acceptedAnswer: { '@type': 'Answer', text: 'You may need both a W-4 (for your employer) and W-9s (for freelance clients). These are separate tax relationships reported differently on your return.' } },
+    { '@type': 'Question', name: "I'm not a U.S. citizen — what do I do?", acceptedAnswer: { '@type': 'Answer', text: 'Non-U.S. persons should not fill out a W-9. Instead, provide Form W-8BEN (individuals) or W-8BEN-E (entities). The W-9 is exclusively for U.S. citizens and resident aliens.' } },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.easyw9form.com' },
+    { '@type': 'ListItem', position: 2, name: 'W-9 Guides', item: 'https://www.easyw9form.com/guides/how-to-fill-w9' },
+    { '@type': 'ListItem', position: 3, name: 'Freelancer Guide', item: 'https://www.easyw9form.com/guides/w9-for-independent-contractors' },
+  ],
+};
+
 export default function GuidePage() {
   return (
-    <GuideLayout
-      title="The Freelancer's Guide to Form W-9"
-      subtitle="Everything independent contractors need to know about providing their tax information safely and accurately."
-      lastUpdated="May 2026"
-      faqs={[
-        { question: "Can I refuse to provide a W-9?", answer: "Legally yes, but the client must then withhold 24% of your payments as backup withholding and send it to the IRS. You'd get this back when filing your return, but it significantly reduces your cash flow." },
-        { question: "Does a W-9 expire?", answer: "No. A W-9 has no expiration date, but submit a new one whenever your name, address, or TIN changes. Many companies request updated W-9s annually." },
-        { question: "Do I need a separate W-9 for each client?", answer: "Yes. Each payer needs their own copy on file to issue a 1099. The information is the same, but each client must have one." },
-        { question: "What if I'm both an employee and a freelancer?", answer: "You may need both a W-4 (for your employer) and W-9s (for freelance clients). These are separate tax relationships reported differently on your return." },
-        { question: "I'm not a U.S. citizen — what do I do?", answer: "Non-U.S. persons should not fill out a W-9. Instead, provide Form W-8BEN (individuals) or W-8BEN-E (entities). The W-9 is exclusively for U.S. citizens and resident aliens." },
-      ]}
-    >
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <GuideLayout
+        title="The Freelancer's Guide to Form W-9"
+        subtitle="Everything independent contractors need to know about providing their tax information safely and accurately."
+        lastUpdated="May 2026"
+        faqs={[
+          { question: "Can I refuse to provide a W-9?", answer: "Legally yes, but the client must then withhold 24% of your payments as backup withholding and send it to the IRS. You'd get this back when filing your return, but it significantly reduces your cash flow." },
+          { question: "Does a W-9 expire?", answer: "No. A W-9 has no expiration date, but submit a new one whenever your name, address, or TIN changes. Many companies request updated W-9s annually." },
+          { question: "Do I need a separate W-9 for each client?", answer: "Yes. Each payer needs their own copy on file to issue a 1099. The information is the same, but each client must have one." },
+          { question: "What if I'm both an employee and a freelancer?", answer: "You may need both a W-4 (for your employer) and W-9s (for freelance clients). These are separate tax relationships reported differently on your return." },
+          { question: "I'm not a U.S. citizen — what do I do?", answer: "Non-U.S. persons should not fill out a W-9. Instead, provide Form W-8BEN (individuals) or W-8BEN-E (entities). The W-9 is exclusively for U.S. citizens and resident aliens." },
+        ]}
+      >
       <p>
         As a freelancer, your &quot;onboarding&quot; with a new client almost always starts with a W-9 request. While it looks like a simple form, handling it correctly is vital for your business and security. This guide covers everything from choosing SSN vs EIN to securely transmitting your completed form.
       </p>
@@ -169,5 +212,6 @@ export default function GuidePage() {
         Ready to fill out your W-9? Our <Link href="/fill-w9-form-online" style={{ color: 'var(--primary)', fontWeight: 600 }}>guided W-9 wizard</Link> walks you through entity selection and TIN entry, generating an IRS-compliant PDF in under 2 minutes.
       </p>
     </GuideLayout>
+    </>
   );
 }

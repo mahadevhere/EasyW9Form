@@ -14,19 +14,61 @@ export const metadata = {
   },
 };
 
+/* ── Structured Data (server-rendered for crawler visibility) ── */
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Is it Safe to Fill Out a W-9 Form Online?',
+  description: 'Security guide for online tax forms. Learn how to protect your SSN/EIN when filling out W-9 forms online, and what to look for in a secure service.',
+  url: 'https://www.easyw9form.com/guides/secure-w9-generation',
+  datePublished: '2026-04-20',
+  dateModified: '2026-05-10',
+  author: { '@type': 'Organization', name: 'EasyW9Form', url: 'https://www.easyw9form.com' },
+  publisher: {
+    '@type': 'Organization', name: 'EasyW9Form', url: 'https://www.easyw9form.com',
+    logo: { '@type': 'ImageObject', url: 'https://www.easyw9form.com/og-image.png' },
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.easyw9form.com/guides/secure-w9-generation' },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Can someone steal my identity with just a W-9?', acceptedAnswer: { '@type': 'Answer', text: 'A completed W-9 contains your full name, address, and SSN or EIN — yes, this is enough for identity theft. This is why secure transmission and zero-storage policies are critical.' } },
+    { '@type': 'Question', name: 'Is the IRS PDF safer than online tools?', acceptedAnswer: { '@type': 'Answer', text: 'The IRS provides a fillable PDF that you download and fill locally — this is secure but offers no guidance, validation, or electronic signature. You still face the risk of emailing the completed form insecurely.' } },
+    { '@type': 'Question', name: 'Should I use my SSN or get an EIN for privacy?', acceptedAnswer: { '@type': 'Answer', text: 'If you share W-9s with multiple clients, getting a free EIN from the IRS is highly recommended. It keeps your SSN private.' } },
+    { '@type': 'Question', name: 'What if a website stored my SSN without permission?', acceptedAnswer: { '@type': 'Answer', text: 'You can file a complaint with the FTC (ftc.gov/complaint) and request data deletion under applicable privacy laws. Monitor your credit reports for unauthorized activity.' } },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.easyw9form.com' },
+    { '@type': 'ListItem', position: 2, name: 'W-9 Guides', item: 'https://www.easyw9form.com/guides/how-to-fill-w9' },
+    { '@type': 'ListItem', position: 3, name: 'Security & Privacy', item: 'https://www.easyw9form.com/guides/secure-w9-generation' },
+  ],
+};
+
 export default function GuidePage() {
   return (
-    <GuideLayout
-      title="Is it Safe to Fill out a W-9 Form Online?"
-      subtitle="Your Taxpayer Identification Number is sensitive. Here is how to ensure your data stays private when using online tools."
-      lastUpdated="May 2026"
-      faqs={[
-        { question: "Can someone steal my identity with just a W-9?", answer: "A completed W-9 contains your full name, address, and SSN or EIN — yes, this is enough for identity theft. This is why secure transmission and zero-storage policies are critical." },
-        { question: "Is the IRS PDF safer than online tools?", answer: "The IRS provides a fillable PDF that you download and fill locally — this is secure but offers no guidance, validation, or electronic signature. You still face the risk of emailing the completed form insecurely." },
-        { question: "Should I use my SSN or get an EIN for privacy?", answer: "If you share W-9s with multiple clients, getting a free EIN from the IRS is highly recommended. It keeps your SSN private." },
-        { question: "What if a website stored my SSN without permission?", answer: "You can file a complaint with the FTC (ftc.gov/complaint) and request data deletion under applicable privacy laws. Monitor your credit reports for unauthorized activity." },
-      ]}
-    >
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <GuideLayout
+        title="Is it Safe to Fill out a W-9 Form Online?"
+        subtitle="Your Taxpayer Identification Number is sensitive. Here is how to ensure your data stays private when using online tools."
+        lastUpdated="May 2026"
+        faqs={[
+          { question: "Can someone steal my identity with just a W-9?", answer: "A completed W-9 contains your full name, address, and SSN or EIN — yes, this is enough for identity theft. This is why secure transmission and zero-storage policies are critical." },
+          { question: "Is the IRS PDF safer than online tools?", answer: "The IRS provides a fillable PDF that you download and fill locally — this is secure but offers no guidance, validation, or electronic signature. You still face the risk of emailing the completed form insecurely." },
+          { question: "Should I use my SSN or get an EIN for privacy?", answer: "If you share W-9s with multiple clients, getting a free EIN from the IRS is highly recommended. It keeps your SSN private." },
+          { question: "What if a website stored my SSN without permission?", answer: "You can file a complaint with the FTC (ftc.gov/complaint) and request data deletion under applicable privacy laws. Monitor your credit reports for unauthorized activity." },
+        ]}
+      >
       <p>
         In an era of frequent data breaches, being hesitant to enter your Social Security Number (SSN) into a website is a sign of good digital hygiene. However, filling out forms online can actually be <strong>safer</strong> than traditional methods — if you use the right tool and know what to look for.
       </p>
@@ -159,5 +201,6 @@ export default function GuidePage() {
         Ready to fill out your W-9 securely? Our <Link href="/fill-w9-form-online" style={{ color: 'var(--primary)', fontWeight: 700 }}>guided W-9 wizard</Link> uses zero-data storage architecture — your SSN never touches our servers.
       </p>
     </GuideLayout>
+    </>
   );
 }

@@ -13,14 +13,43 @@ export const metadata = {
   },
 };
 
+/* ── Structured Data (server-rendered for crawler visibility) ── */
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'How to Fill Out a W-9 Form: Step-by-Step (2026)',
+  description: 'Learn exactly how to fill out IRS Form W-9 correctly. Our step-by-step guide covers entity types, TIN, and common mistakes for freelancers and LLCs.',
+  url: 'https://www.easyw9form.com/guides/how-to-fill-w9',
+  datePublished: '2026-04-20',
+  dateModified: '2026-05-10',
+  author: { '@type': 'Organization', name: 'EasyW9Form', url: 'https://www.easyw9form.com' },
+  publisher: {
+    '@type': 'Organization', name: 'EasyW9Form', url: 'https://www.easyw9form.com',
+    logo: { '@type': 'ImageObject', url: 'https://www.easyw9form.com/og-image.png' },
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.easyw9form.com/guides/how-to-fill-w9' },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.easyw9form.com' },
+    { '@type': 'ListItem', position: 2, name: 'How to Fill Out a W-9', item: 'https://www.easyw9form.com/guides/how-to-fill-w9' },
+  ],
+};
+
 export default function GuidePage() {
   return (
-    <GuideLayout 
-      title="How to Fill Out a W-9 Form"
-      subtitle="The complete step-by-step guide to filling out IRS Form W-9 correctly — for freelancers, contractors, and small businesses."
-      lastUpdated="April 2026"
-      headerImage="/images/guides/header-banner.png"
-    >
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <GuideLayout 
+        title="How to Fill Out a W-9 Form"
+        subtitle="The complete step-by-step guide to filling out IRS Form W-9 correctly — for freelancers, contractors, and small businesses."
+        lastUpdated="April 2026"
+        headerImage="/images/guides/header-banner.png"
+      >
       {/* Intro */}
       <p>
         If you are an independent contractor, freelancer, or run a small business, you will inevitably be asked to fill out a W-9 form. Companies use this form to collect your tax information so they can report the payments they make to you to the IRS.
@@ -159,5 +188,6 @@ export default function GuidePage() {
       </div>
 
     </GuideLayout>
+    </>
   );
 }

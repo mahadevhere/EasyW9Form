@@ -1,10 +1,14 @@
 "use client";
-// Version: 1.0.2 - Fixed Success UI
+// Version: 1.1.0 - Performance: instant form load, lazy signature canvas
 
-import { useState, useCallback, useRef, useEffect } from "react";
-import SignatureCanvas from 'react-signature-canvas';
+import { useState, useCallback, useRef, useEffect, Suspense } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+
+const SignatureCanvas = dynamic(() => import('react-signature-canvas'), {
+  ssr: false,
+  loading: () => <div style={{ width: '100%', height: '120px', background: '#f8fafc', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)', fontSize: 12 }}>Loading signature pad...</div>,
+});
 
 const DocumentUpload = dynamic(() => import("@/components/DocumentUpload"), {
   ssr: false,
@@ -150,7 +154,8 @@ export default function FillW9Form() {
   const [leadEmailSent, setLeadEmailSent] = useState(false);
 
 
-  const initData = async () => {
+  const initFromStorage = () => {
+    // Phase 1: INSTANT — restore from sessionStorage (synchronous, no network)
     let currentId = sessionStorage.getItem("w9_current_form_id");
     if (!currentId) {
       currentId = 'w9_' + Math.random().toString(36).substr(2, 9);
@@ -158,7 +163,6 @@ export default function FillW9Form() {
     }
     setFormId(currentId);
     
-    // 1. First, restore the form content from session storage
     const savedDraft = sessionStorage.getItem("w9_draft");
     if (savedDraft) {
       try {
@@ -172,24 +176,40 @@ export default function FillW9Form() {
       setStep(parseInt(savedStep));
     }
 
-    // 2. Then, verify the payment status from the backend
+    // Mark as ready immediately — form is interactive NOW
+    setIsInitialized(true);
+    return currentId;
+  };
+
+  const checkPaymentStatus = async (currentId) => {
+    // Phase 2: BACKGROUND — check payment status without blocking render
     try {
       const res = await fetch(`/api/save-draft?formId=${currentId}`);
       if (res.ok) {
         const body = await res.json();
         if (body.isPaid) setIsPaid(true);
       }
-    } catch (e) {}
-
-    setIsInitialized(true);
+    } catch (e) {
+      // Silently fail — form is already usable
+    }
   };
 
   useEffect(() => {
     if (sessionStorage.getItem("w9_draft")) {
       setShowRestoreOverlay(true);
     }
-    initData();
+    const currentId = initFromStorage();
+    // Fire and forget — don't block rendering
+    checkPaymentStatus(currentId);
   }, []);
+
+  // Auto-dismiss the "session restored" toast
+  useEffect(() => {
+    if (showRestoreOverlay) {
+      const timer = setTimeout(() => setShowRestoreOverlay(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [showRestoreOverlay]);
 
   // Restore auto-preview for Step 5
   useEffect(() => {
@@ -619,11 +639,24 @@ export default function FillW9Form() {
   return (
     <div className="form-page">
       <h1 style={{ position: 'absolute', width: 1, height: 1, padding: 0, margin: -1, overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', borderWidth: 0 }}>Fill Out W-9 Form Online</h1>
-      {showRestoreOverlay && !isInitialized && (
-        <div style={{ position: 'fixed', inset: 0, background: 'rgba(255,255,255,0.9)', zIndex: 9999, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-          <div style={{ width: 40, height: 40, border: '4px solid #f3f3f3', borderTop: '4px solid var(--primary)', borderRadius: '50%', marginBottom: 16, animation: 'spin 1s linear infinite' }}></div>
-          <div style={{ fontWeight: 600, color: 'var(--text-secondary)' }}>Restoring your session...</div>
-          <style>{`@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`}</style>
+      {showRestoreOverlay && (
+        <div style={{ 
+          position: 'fixed', 
+          bottom: 24, 
+          right: 24, 
+          background: 'white', 
+          zIndex: 9999, 
+          display: 'flex', 
+          alignItems: 'center', 
+          gap: 12,
+          padding: '12px 20px',
+          borderRadius: 12,
+          boxShadow: '0 4px 20px rgba(0,0,0,0.12)',
+          border: '1px solid var(--border)',
+          animation: 'fadeIn 0.3s ease',
+        }}>
+          <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#10B981' }}></div>
+          <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--text-secondary)' }}>Session restored ✓</div>
         </div>
       )}
       <div className={`form-layout step-${step}`}>

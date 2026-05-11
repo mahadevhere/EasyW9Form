@@ -14,19 +14,126 @@ export const metadata = {
   },
 };
 
+/* ── Structured Data (server-rendered for crawler visibility) ── */
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'No EIN? How Freelancers Can Fill a W-9 with SSN',
+  description: 'Learn what to do if you are a freelancer without an Employer Identification Number (EIN) when filling out a W-9 form. Discover if you can use your SSN instead.',
+  url: 'https://www.easyw9form.com/guides/what-to-do-without-ein',
+  datePublished: '2026-04-20',
+  dateModified: '2026-05-10',
+  author: {
+    '@type': 'Organization',
+    name: 'EasyW9Form',
+    url: 'https://www.easyw9form.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'EasyW9Form',
+    url: 'https://www.easyw9form.com',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://www.easyw9form.com/og-image.png',
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://www.easyw9form.com/guides/what-to-do-without-ein',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Will my client care if I use an SSN instead of an EIN?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. Clients accept both. The W-9 has fields for both SSN and EIN — you simply fill in whichever applies. There is no preference or penalty for using one over the other.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can the IRS reject a W-9 with an SSN?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. The IRS specifically allows sole proprietors and single-member LLCs to use their SSN. In fact, the IRS prefers the SSN for disregarded entities (single-member LLCs).',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'I got an EIN but lost the confirmation letter — what do I do?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Call the IRS Business & Specialty Tax Line at 1-800-829-4933. They can look up your EIN after verifying your identity. You can also find your EIN on previously filed tax returns.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: "Can I use someone else's EIN on my W-9?",
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Absolutely not. Using an EIN that does not belong to you on a W-9 is tax fraud and can result in severe IRS penalties and criminal charges.',
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://www.easyw9form.com',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'W-9 Guides',
+      item: 'https://www.easyw9form.com/guides/how-to-fill-w9',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'No EIN? Use Your SSN',
+      item: 'https://www.easyw9form.com/guides/what-to-do-without-ein',
+    },
+  ],
+};
+
 export default function GuidePage() {
   return (
-    <GuideLayout
-      title="What to Do if You Don't Have an EIN as a Freelancer"
-      subtitle="Panic mode over: Everything you need to know about filling out a W-9 when you don't have an Employer Identification Number."
-      lastUpdated="May 2026"
-      faqs={[
-        { question: "Will my client care if I use an SSN instead of an EIN?", answer: "No. Clients accept both. The W-9 has fields for both SSN and EIN — you simply fill in whichever applies. There is no preference or penalty for using one over the other." },
-        { question: "Can the IRS reject a W-9 with an SSN?", answer: "No. The IRS specifically allows sole proprietors and single-member LLCs to use their SSN. In fact, the IRS prefers the SSN for disregarded entities (single-member LLCs)." },
-        { question: "I got an EIN but lost the confirmation letter — what do I do?", answer: "Call the IRS Business & Specialty Tax Line at 1-800-829-4933. They can look up your EIN after verifying your identity. You can also find your EIN on previously filed tax returns." },
-        { question: "Can I use someone else's EIN on my W-9?", answer: "Absolutely not. Using an EIN that doesn't belong to you on a W-9 is tax fraud and can result in severe IRS penalties and criminal charges." },
-      ]}
-    >
+    <>
+      {/* Server-rendered structured data — visible to crawlers */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <GuideLayout
+        title="What to Do if You Don't Have an EIN as a Freelancer"
+        subtitle="Panic mode over: Everything you need to know about filling out a W-9 when you don't have an Employer Identification Number."
+        lastUpdated="May 2026"
+        faqs={[
+          { question: "Will my client care if I use an SSN instead of an EIN?", answer: "No. Clients accept both. The W-9 has fields for both SSN and EIN — you simply fill in whichever applies. There is no preference or penalty for using one over the other." },
+          { question: "Can the IRS reject a W-9 with an SSN?", answer: "No. The IRS specifically allows sole proprietors and single-member LLCs to use their SSN. In fact, the IRS prefers the SSN for disregarded entities (single-member LLCs)." },
+          { question: "I got an EIN but lost the confirmation letter — what do I do?", answer: "Call the IRS Business & Specialty Tax Line at 1-800-829-4933. They can look up your EIN after verifying your identity. You can also find your EIN on previously filed tax returns." },
+          { question: "Can I use someone else's EIN on my W-9?", answer: "Absolutely not. Using an EIN that doesn't belong to you on a W-9 is tax fraud and can result in severe IRS penalties and criminal charges." },
+        ]}
+      >
       <p>
         Getting asked for a W-9 can be intimidating, especially if it&apos;s your first time working as a freelancer or independent contractor. One of the most common questions is: <strong>&quot;What do I do if I don&apos;t have an EIN?&quot;</strong> The good news? You almost certainly don&apos;t need one.
       </p>
@@ -167,5 +274,6 @@ export default function GuidePage() {
         </Link>
       </div>
     </GuideLayout>
+    </>
   );
 }

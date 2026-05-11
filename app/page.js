@@ -103,7 +103,7 @@ export default function Home() {
                   <span style={{ color: '#059669', fontSize: '18px' }}>✔</span> 256-bit Encrypted
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: 600, color: '#475569' }}>
-                  <span style={{ color: '#059669', fontSize: '18px' }}>✔</span> No Data Stored
+                  <span style={{ color: '#059669', fontSize: '18px' }}>✔</span> Processed Locally In-Browser
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: 600, color: '#475569' }}>
                   <span style={{ color: '#059669', fontSize: '18px' }}>✔</span> Trusted by 10,000+ Users

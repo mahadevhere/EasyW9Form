@@ -14,19 +14,61 @@ export const metadata = {
   },
 };
 
+/* ── Structured Data (server-rendered for crawler visibility) ── */
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'W-9 vs W-4: Which Tax Form Do You Need?',
+  description: 'Confused between Form W-9 and Form W-4? Learn the differences, who needs which form, and how they impact your taxes and withholding.',
+  url: 'https://www.easyw9form.com/guides/tax-difference-w9-vs-w4',
+  datePublished: '2026-04-20',
+  dateModified: '2026-05-10',
+  author: { '@type': 'Organization', name: 'EasyW9Form', url: 'https://www.easyw9form.com' },
+  publisher: {
+    '@type': 'Organization', name: 'EasyW9Form', url: 'https://www.easyw9form.com',
+    logo: { '@type': 'ImageObject', url: 'https://www.easyw9form.com/og-image.png' },
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.easyw9form.com/guides/tax-difference-w9-vs-w4' },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What if I switch from contractor to employee with the same company?', acceptedAnswer: { '@type': 'Answer', text: "You'll stop using the W-9 and fill out a W-4 instead. The company should issue a 1099-NEC for the contractor period and a W-2 for the employee period." } },
+    { '@type': 'Question', name: 'Does a W-9 affect my credit or background check?', acceptedAnswer: { '@type': 'Answer', text: 'No. A W-9 is a tax document only. It does not appear on credit reports, background checks, or employment verification systems.' } },
+    { '@type': 'Question', name: 'Can I fill out a W-9 if I\'m a minor?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Minors who earn income as independent contractors can fill out a W-9 using their SSN. The minor must sign the certification themselves.' } },
+    { '@type': 'Question', name: 'I received a W-9 request from a new employer — is this a red flag?', acceptedAnswer: { '@type': 'Answer', text: 'It could be. If a company hires you as a full-time employee but asks for a W-9 instead of a W-4, they may be trying to misclassify you as a contractor to avoid paying benefits and employer taxes.' } },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.easyw9form.com' },
+    { '@type': 'ListItem', position: 2, name: 'W-9 Guides', item: 'https://www.easyw9form.com/guides/how-to-fill-w9' },
+    { '@type': 'ListItem', position: 3, name: 'W-9 vs W-4', item: 'https://www.easyw9form.com/guides/tax-difference-w9-vs-w4' },
+  ],
+};
+
 export default function GuidePage() {
   return (
-    <GuideLayout
-      title="W-9 vs W-4: What is the Difference?"
-      subtitle="Knowing which form to use is critical for staying tax-compliant. Here is the complete breakdown of W-9 vs W-4."
-      lastUpdated="May 2026"
-      faqs={[
-        { question: "What if I switch from contractor to employee with the same company?", answer: "You'll stop using the W-9 and fill out a W-4 instead. The company should issue a 1099-NEC for the contractor period and a W-2 for the employee period." },
-        { question: "Does a W-9 affect my credit or background check?", answer: "No. A W-9 is a tax document only. It does not appear on credit reports, background checks, or employment verification systems." },
-        { question: "Can I fill out a W-9 if I'm a minor?", answer: "Yes. Minors who earn income as independent contractors can fill out a W-9 using their SSN. The minor must sign the certification themselves." },
-        { question: "I received a W-9 request from a new employer — is this a red flag?", answer: "It could be. If a company hires you as a full-time employee but asks for a W-9 instead of a W-4, they may be trying to misclassify you as a contractor to avoid paying benefits and employer taxes." },
-      ]}
-    >
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <GuideLayout
+        title="W-9 vs W-4: What is the Difference?"
+        subtitle="Knowing which form to use is critical for staying tax-compliant. Here is the complete breakdown of W-9 vs W-4."
+        lastUpdated="May 2026"
+        faqs={[
+          { question: "What if I switch from contractor to employee with the same company?", answer: "You'll stop using the W-9 and fill out a W-4 instead. The company should issue a 1099-NEC for the contractor period and a W-2 for the employee period." },
+          { question: "Does a W-9 affect my credit or background check?", answer: "No. A W-9 is a tax document only. It does not appear on credit reports, background checks, or employment verification systems." },
+          { question: "Can I fill out a W-9 if I'm a minor?", answer: "Yes. Minors who earn income as independent contractors can fill out a W-9 using their SSN. The minor must sign the certification themselves." },
+          { question: "I received a W-9 request from a new employer — is this a red flag?", answer: "It could be. If a company hires you as a full-time employee but asks for a W-9 instead of a W-4, they may be trying to misclassify you as a contractor to avoid paying benefits and employer taxes." },
+        ]}
+      >
       <p>
         If you&apos;ve just started a new gig or job, you might be handed a piece of paper that starts with &quot;W.&quot; Whether it&apos;s a W-9 or a W-4 determines your relationship with the company and how your taxes will be handled. Getting it wrong can lead to incorrect withholding, surprise tax bills, or even IRS penalties.
       </p>
@@ -202,5 +244,6 @@ export default function GuidePage() {
         Need to fill out a W-9 right now? Use our <Link href="/fill-w9-form-online" style={{ color: 'var(--primary)', fontWeight: 600 }}>guided W-9 wizard</Link> to generate an IRS-compliant PDF in under 2 minutes — no signup required.
       </p>
     </GuideLayout>
+    </>
   );
 }
